@@ -1,0 +1,11 @@
+{
+  "name": "raposo-promocoes-landing-page",
+  "version": "1.0.0",
+  "description": "Landing Page de Alta Conversão para o canal Raposo Promoções no Telegram",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "author": "Barbosa64x",
+  "license": "MIT"
+}

@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Swiper.js CSS & JS (para o Carrossel Mobile) -->
+  <!-- Swiper.js CSS & JS (para os Carrosséis Mobile) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -68,7 +68,7 @@
   <!-- ==========================================
        TOP NOTICE BADGE (Contador em Tempo Real)
        ========================================== -->
-  <header class="bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-black py-2 px-3 text-center text-xs md:text-sm font-bold tracking-wide shadow-md">
+  <header id="top-notice-bar" class="relative z-40 bg-gradient-to-r from-amber-600 via-yellow-500 to-amber-600 text-black py-2 px-3 text-center text-xs md:text-sm font-bold tracking-wide shadow-md">
     <div class="max-w-4xl mx-auto flex items-center justify-center gap-2">
       <span class="relative flex h-2.5 w-2.5">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-800 opacity-75"></span>
@@ -98,7 +98,7 @@
       <span>Canal Oficial Raposo Promoções</span>
     </div>
 
-    <!-- Headline AIDA de Alto Impacto com SVG Underline Curvo e Limpo -->
+    <!-- Headline AIDA de Alto Impacto com SVG Underline Curvo Vetorial -->
     <h1 class="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight tracking-tight text-white mb-3">
       Economize até 
       <span class="relative inline-block whitespace-nowrap">
@@ -156,7 +156,7 @@
   </section>
 
   <!-- ==========================================
-       SEÇÃO: CARROSSEL CONTÍNUO DE LOGOS DAS PLATAFORMAS (MARQUEE)
+       SEÇÃO: CARROSSEL SWIPER COM LOGOS OFICIAIS DAS MARCAS (SEM BUG OU DUPLICAÇÃO)
        ========================================== -->
   <section class="py-6 bg-brand-card/70 border-y border-brand-cardBorder overflow-hidden relative">
     <div class="max-w-xl mx-auto px-4 text-center mb-4">
@@ -167,130 +167,41 @@
     </div>
 
     <!-- Gradientes de Esmaecimento nas Bordas -->
-    <div class="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-brand-dark to-transparent z-10"></div>
-    <div class="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-brand-dark to-transparent z-10"></div>
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-brand-dark to-transparent z-20"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-brand-dark to-transparent z-20"></div>
     
-    <!-- Marquee Container com Logos em SVG de Alta Resolução -->
-    <div class="flex overflow-hidden">
-      <div class="animate-marquee flex items-center gap-4 pr-4">
-        
+    <!-- Swiper Carousel com Imagens Oficiais das Marcas -->
+    <div class="swiper brandLogosSwiper px-4">
+      <div class="swiper-wrapper flex items-center">
+
         <!-- Mercado Livre -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-yellow-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#FFE600"/>
-            <path d="M6 13C6 13 8 9 12 11C16 13 18 9 18 9" stroke="#2D3277" stroke-width="2.2" stroke-linecap="round"/>
-          </svg>
-          <span class="text-yellow-400 font-extrabold text-xs sm:text-sm tracking-wide">Mercado Livre</span>
+        <div class="swiper-slide !w-auto">
+          <img src="./public/logos/mercadolivre.svg" alt="Mercado Livre Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
         </div>
 
         <!-- Shopee -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-orange-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#EE4D2D"/>
-            <path d="M8 8V6.5C8 4.5 9.5 3 12 3C14.5 3 16 4.5 16 6.5V8M6 8H18L17 20H7L6 8Z" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10.5 12C10.5 12 11 11 12.5 11.5C14 12 13 14 11 14.5C9 15 10 17 12 17C13.5 17 14 16 14 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-          <span class="text-orange-400 font-extrabold text-xs sm:text-sm tracking-wide">Shopee</span>
+        <div class="swiper-slide !w-auto">
+          <img src="./public/logos/shopee.svg" alt="Shopee Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
         </div>
 
         <!-- Amazon -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-cyan-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#131921"/>
-            <path d="M6 14.5C9.5 17 14.5 17 18 14" stroke="#FF9900" stroke-width="2" stroke-linecap="round"/>
-            <path d="M16 13.5L18.5 14L17.5 16.5" stroke="#FF9900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="text-cyan-400 font-extrabold text-xs sm:text-sm tracking-wide">Amazon</span>
+        <div class="swiper-slide !w-auto">
+          <img src="./public/logos/amazon.svg" alt="Amazon Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
         </div>
 
         <!-- Magalu -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-blue-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#0086FF"/>
-            <path d="M7 16V8L12 13L17 8V16" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="text-blue-400 font-extrabold text-xs sm:text-sm tracking-wide">Magalu</span>
+        <div class="swiper-slide !w-auto">
+          <img src="./public/logos/magalu.svg" alt="Magalu Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
         </div>
 
         <!-- AliExpress -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-red-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#FF4747"/>
-            <path d="M7 17L12 7L17 17M9 13H15" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="text-red-400 font-extrabold text-xs sm:text-sm tracking-wide">AliExpress</span>
+        <div class="swiper-slide !w-auto">
+          <img src="./public/logos/aliexpress.svg" alt="AliExpress Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
         </div>
 
         <!-- Shein -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-slate-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#222222"/>
-            <circle cx="12" cy="12" r="6" stroke="#FFFFFF" stroke-width="1.8"/>
-            <path d="M12 9V15M9 12H15" stroke="#F59E0B" stroke-width="1.8"/>
-          </svg>
-          <span class="text-slate-200 font-extrabold text-xs sm:text-sm tracking-wide">Shein</span>
-        </div>
-
-      </div>
-
-      <!-- DUPLICAÇÃO PARA EFEITO DE LOOP INFINITO CONTÍNUO (MARQUEE) -->
-      <div class="animate-marquee flex items-center gap-4 pr-4" aria-hidden="true">
-        
-        <!-- Mercado Livre -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-yellow-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#FFE600"/>
-            <path d="M6 13C6 13 8 9 12 11C16 13 18 9 18 9" stroke="#2D3277" stroke-width="2.2" stroke-linecap="round"/>
-          </svg>
-          <span class="text-yellow-400 font-extrabold text-xs sm:text-sm tracking-wide">Mercado Livre</span>
-        </div>
-
-        <!-- Shopee -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-orange-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#EE4D2D"/>
-            <path d="M8 8V6.5C8 4.5 9.5 3 12 3C14.5 3 16 4.5 16 6.5V8M6 8H18L17 20H7L6 8Z" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M10.5 12C10.5 12 11 11 12.5 11.5C14 12 13 14 11 14.5C9 15 10 17 12 17C13.5 17 14 16 14 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
-          <span class="text-orange-400 font-extrabold text-xs sm:text-sm tracking-wide">Shopee</span>
-        </div>
-
-        <!-- Amazon -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-cyan-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#131921"/>
-            <path d="M6 14.5C9.5 17 14.5 17 18 14" stroke="#FF9900" stroke-width="2" stroke-linecap="round"/>
-            <path d="M16 13.5L18.5 14L17.5 16.5" stroke="#FF9900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="text-cyan-400 font-extrabold text-xs sm:text-sm tracking-wide">Amazon</span>
-        </div>
-
-        <!-- Magalu -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-blue-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#0086FF"/>
-            <path d="M7 16V8L12 13L17 8V16" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="text-blue-400 font-extrabold text-xs sm:text-sm tracking-wide">Magalu</span>
-        </div>
-
-        <!-- AliExpress -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-red-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#FF4747"/>
-            <path d="M7 17L12 7L17 17M9 13H15" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span class="text-red-400 font-extrabold text-xs sm:text-sm tracking-wide">AliExpress</span>
-        </div>
-
-        <!-- Shein -->
-        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-slate-500/30 transition-all shadow-md">
-          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
-            <rect width="24" height="24" rx="12" fill="#222222"/>
-            <circle cx="12" cy="12" r="6" stroke="#FFFFFF" stroke-width="1.8"/>
-            <path d="M12 9V15M9 12H15" stroke="#F59E0B" stroke-width="1.8"/>
-          </svg>
-          <span class="text-slate-200 font-extrabold text-xs sm:text-sm tracking-wide">Shein</span>
+        <div class="swiper-slide !w-auto">
+          <img src="./public/logos/shein.svg" alt="Shein Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
         </div>
 
       </div>
@@ -311,7 +222,7 @@
     </div>
 
     <div class="grid gap-4">
-      <!-- Feature Card 1 (Ícone 100% Alinhado na Vertical) -->
+      <!-- Feature Card 1 -->
       <div class="glass-card p-4 rounded-xl flex items-center gap-4 border border-brand-cardBorder hover:border-amber-500/40 transition-colors">
         <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 shadow-inner">
           <i data-lucide="search" class="w-6 h-6"></i>
@@ -324,7 +235,7 @@
         </div>
       </div>
 
-      <!-- Feature Card 2 (Ícone 100% Alinhado na Vertical) -->
+      <!-- Feature Card 2 -->
       <div class="glass-card p-4 rounded-xl flex items-center gap-4 border border-brand-cardBorder hover:border-emerald-500/40 transition-colors">
         <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 shadow-inner">
           <i data-lucide="tag" class="w-6 h-6"></i>
@@ -337,7 +248,7 @@
         </div>
       </div>
 
-      <!-- Feature Card 3 (Ícone 100% Alinhado na Vertical) -->
+      <!-- Feature Card 3 -->
       <div class="glass-card p-4 rounded-xl flex items-center gap-4 border border-brand-cardBorder hover:border-blue-500/40 transition-colors">
         <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0 shadow-inner">
           <i data-lucide="bell-ring" class="w-6 h-6"></i>
@@ -624,11 +535,11 @@
   </footer>
 
   <!-- ==========================================
-       FLOATING SOCIAL PROOF TOAST (CENTRALIZADO NO TOPO)
+       FLOATING SOCIAL PROOF TOAST (FLUTUANDO ABAIXO DA BARRA SUPERIOR SEM COBRIR)
        ========================================== -->
   <div 
     id="social-proof-toast" 
-    class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[340px] bg-slate-900/95 backdrop-blur-md border border-amber-500/50 p-3 rounded-2xl shadow-2xl transition-all duration-500 transform -translate-y-24 opacity-0 flex items-center gap-3">
+    class="fixed top-14 sm:top-16 left-1/2 -translate-x-1/2 z-30 w-[90%] max-w-[340px] bg-slate-900/95 backdrop-blur-md border border-amber-500/50 p-3 rounded-2xl shadow-2xl transition-all duration-500 transform -translate-y-32 opacity-0 flex items-center gap-3">
     <div class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xs flex items-center justify-center flex-shrink-0 border border-amber-500/40 shadow-inner">
       ⚡
     </div>
@@ -662,7 +573,7 @@
     lucide.createIcons();
 
     // Swiper Carousel init para depoimentos
-    const swiper = new Swiper('.testimonialsSwiper', {
+    const testimonialsSwiper = new Swiper('.testimonialsSwiper', {
       slidesPerView: 'auto',
       spaceBetween: 16,
       centeredSlides: false,
@@ -675,6 +586,19 @@
         el: '.swiper-pagination',
         clickable: true,
       },
+    });
+
+    // Swiper Carousel com Autoplay Contínuo e Suave para Logos das Marcas
+    const brandSwiper = new Swiper('.brandLogosSwiper', {
+      slidesPerView: 'auto',
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 2000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+      },
+      allowTouchMove: true,
     });
   </script>
 </body>

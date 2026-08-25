@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <!-- Official Mercado Livre Yellow Badge -->
+  <rect width="200" height="50" rx="12" fill="#FFE600"/>
+  <!-- Handshake icon -->
+  <g transform="translate(15, 10)">
+    <path d="M7 16.5C7 16.5 10 11.5 16 14C22 16.5 25 11.5 25 11.5" stroke="#2D3277" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <path d="M12 21L7 16.5L10 12.5L13.5 15.5L20 9L23 11.5L15 20.5L12 21Z" fill="#2D3277"/>
+  </g>
+  <!-- Text -->
+  <text x="52" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="17" font-weight="900" fill="#2D3277">mercado livre</text>
+</svg>

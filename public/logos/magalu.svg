@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" width="160" height="50">
+  <!-- Official Magalu Blue Badge -->
+  <rect width="160" height="50" rx="12" fill="#0086FF"/>
+  <!-- Text -->
+  <text x="24" y="33" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="24" font-weight="900" fill="#FFFFFF" letter-spacing="-0.5">magalu</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 50" width="170" height="50">
+  <!-- Official AliExpress Red Badge -->
+  <rect width="170" height="50" rx="12" fill="#FF4747"/>
+  <!-- Text -->
+  <text x="14" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="20" font-weight="900" fill="#FFFFFF">AliExpress</text>
+</svg>

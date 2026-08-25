@@ -9,7 +9,7 @@ window.RAPOSO_CONFIG = {
   telegramUrl: "https://t.me/raposodaspromo", // Substitua pelo seu link do Telegram
 
   // 2. ID DO SEU PIXEL DO FACEBOOK (META)
-  facebookPixelId: "123456789012345", // Substitua pelo seu ID de Pixel (ex: 9876543210)
+  facebookPixelId: "2527556281306713", // Substitua pelo seu ID de Pixel (ex: 9876543210)
 
   // 3. NOME DO CANAL E BRANDING
   channelName: "Raposo Promoções",

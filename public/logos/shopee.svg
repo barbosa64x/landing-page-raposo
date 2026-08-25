@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 50" width="160" height="50">
+  <!-- Official Shopee Orange Badge -->
+  <rect width="160" height="50" rx="12" fill="#EE4D2D"/>
+  <!-- Bag Icon -->
+  <g transform="translate(14, 10)">
+    <path d="M7 10V8C7 5.2 9.2 3 12 3C14.8 3 17 5.2 17 8V10M4 10H20L19 25H5L4 10Z" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M10 15C10 15 10.8 14 12 14.5C13.2 15 12.5 16.8 11 17.2C9.5 17.6 10.2 19.5 12 19.5C13.2 19.5 14 18.5 14 18.5" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+  </g>
+  <!-- Text -->
+  <text x="46" y="32" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="20" font-weight="900" fill="#FFFFFF">Shopee</text>
+</svg>
