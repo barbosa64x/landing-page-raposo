@@ -1,40 +1,20 @@
 /**
- * Meta (Facebook) Pixel & API de Conversões (CAPI) Integration Module
- * Suporta rastreamento via Navegador (Pixel JS) e Server-Side (CAPI via Netlify Function).
+ * Meta Pixel - Módulo de Rastreamento de Eventos de Clique
+ * O snippet base (fbq init + PageView) está INLINE no index.html para ser detectado
+ * por ferramentas como Meta Ads Data Advisor e Meta Pixel Helper.
+ * Este arquivo gerencia apenas eventos de clique (Lead, CAPI server-side).
  */
 
-(function initMetaPixel() {
+(function verifyPixel() {
   const config = window.RAPOSO_CONFIG || {};
   const pixelId = config.facebookPixelId;
-
-  if (!pixelId || pixelId === "123456789012345") {
-    console.warn("[Meta Pixel] ID do Pixel não configurado ou usando ID padrão em config.js");
+  if (!pixelId) {
+    console.warn("[Meta Pixel] ID do Pixel não configurado em config.js");
+    return;
   }
-
-  // Standard Meta Pixel snippet
-  !(function (f, b, e, v, n, t, s) {
-    if (f.fbq) return;
-    n = f.fbq = function () {
-      n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-    };
-    if (!f._fbq) f._fbq = n;
-    n.push = n;
-    n.loaded = !0;
-    n.version = '2.0';
-    n.queue = [];
-    t = b.createElement(e);
-    t.async = !0;
-    t.src = v;
-    s = b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t, s);
-  })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-
-  if (pixelId && pixelId !== "123456789012345") {
-    fbq('init', pixelId);
-    fbq('track', 'PageView');
-    console.log(`[Meta Pixel] Inicializado com Sucesso (ID: ${pixelId}) - Evento PageView Disparado.`);
-  }
+  console.log(`[Meta Pixel] Ativo (ID: ${pixelId}) — PageView já registrado.`);
 })();
+
 
 /**
  * Global Helper to Track Lead / CTA Click (Browser + Server-Side CAPI)
