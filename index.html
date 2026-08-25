@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Swiper.js CSS & JS (Biblioteca Pronta para o Carrossel Linear Infinito) -->
+  <!-- Swiper.js CSS & JS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -156,7 +156,7 @@
   </section>
 
   <!-- ==========================================
-       SEÇÃO: CARROSSEL INFINITO E LINEAR DAS NOSSAS PLATAFORMAS (PUBLIC LOGOS)
+       SEÇÃO: CARROSSEL INFINITO CONTINUO DAS MARCAS (COMPLETAMENTE ININTERRUPTO)
        ========================================== -->
   <section class="py-6 bg-brand-card/70 border-y border-brand-cardBorder overflow-hidden relative">
     <div class="max-w-xl mx-auto px-4 text-center mb-4">
@@ -170,62 +170,62 @@
     <div class="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-brand-dark to-transparent z-20"></div>
     <div class="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-brand-dark to-transparent z-20"></div>
     
-    <!-- Swiper Carousel com Todos os Logos da pasta public/ -->
-    <div class="swiper brandLogosSwiper">
+    <!-- Swiper Carousel com Proteção Contra Cliques e Pausas (pointer-events-none) -->
+    <div class="swiper brandLogosSwiper pointer-events-none select-none">
       <div class="swiper-wrapper flex items-center">
 
         <!-- 1. Mercado Livre -->
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-mercado-livre.png" alt="Mercado Livre Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
         <!-- 2. Shopee -->
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-shopee.svg" alt="Shopee Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
-        <!-- 3. Amazon -->
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <!-- 3. Amazon (Com Texto Branco Visível) -->
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-amazon.svg" alt="Amazon Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
         <!-- 4. Magalu -->
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-magalu.webp" alt="Magalu Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
         <!-- 5. AliExpress -->
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-aliexpress.webp" alt="AliExpress Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
         <!-- 6. Shein -->
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-shein.png" alt="Shein Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
-        <!-- REPETIÇÃO PARA MANTER MOVIMENTO INFINITO E LINEAR 100% FLUIDO -->
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <!-- REPETIÇÕES PARA LOOP 100% INFINITO E FLUIDO -->
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-mercado-livre.png" alt="Mercado Livre Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-shopee.svg" alt="Shopee Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-amazon.svg" alt="Amazon Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-magalu.webp" alt="Magalu Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-aliexpress.webp" alt="AliExpress Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
-        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-3">
           <img src="./public/logo-shein.png" alt="Shein Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
@@ -613,7 +613,7 @@
       },
     });
 
-    // Swiper Carousel com Autoplay Contínuo LINEAR e Infinito para as Marcas
+    // Swiper Carousel com Autoplay Contínuo LINEAR e Protegido contra interrupção de cliques
     const brandSwiper = new Swiper('.brandLogosSwiper', {
       slidesPerView: 'auto',
       spaceBetween: 28,
@@ -625,8 +625,19 @@
         delay: 0,
         disableOnInteraction: false,
         pauseOnMouseEnter: false,
+        stopOnLastSlide: false,
+        waitForTransition: false,
       },
       allowTouchMove: false,
+      simulateTouch: false,
+      touchRatio: 0,
+      preventClicks: true,
+      preventClicksPropagation: true,
+    });
+
+    // Garantir reinício contínuo caso algum evento tente pausar
+    brandSwiper.on('autoplayStop', () => {
+      brandSwiper.autoplay.start();
     });
   </script>
 </body>
