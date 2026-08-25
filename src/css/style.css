@@ -1,0 +1,69 @@
+/* Custom animations and styling extensions for Raposo Promoções Landing Page */
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4), 0 0 30px rgba(34, 197, 94, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(34, 197, 94, 0.8), 0 0 50px rgba(34, 197, 94, 0.5);
+  }
+}
+
+@keyframes goldGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 18px rgba(245, 158, 11, 0.9));
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.btn-cta-pulse {
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+.logo-gold-glow {
+  animation: goldGlow 3s infinite ease-in-out;
+}
+
+.float-badge {
+  animation: floatAnimation 3s infinite ease-in-out;
+}
+
+/* Custom Scrollbar for Carousel */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glassmorphism Cards */
+.glass-card {
+  background: rgba(22, 22, 30, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card-gold {
+  background: rgba(26, 22, 16, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Aspect ratio 9:16 for vertical video */
+.aspect-vertical {
+  aspect-ratio: 9 / 16;
+}
