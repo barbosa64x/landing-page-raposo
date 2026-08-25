@@ -1,59 +1,30 @@
-/* Custom animations and styling extensions for Raposo Promoções Landing Page */
+/* =========================================================
+   Raposo Promoções - Custom Styles
+   ========================================================= */
 
+/* ----------------------------------------------------------
+   Botão CTA Pulsante (Verde Neon)
+   ---------------------------------------------------------- */
 @keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(34, 197, 94, 0.4), 0 0 30px rgba(34, 197, 94, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(34, 197, 94, 0.8), 0 0 50px rgba(34, 197, 94, 0.5);
-  }
+  0%, 100% { box-shadow: 0 0 15px rgba(34, 197, 94, 0.4), 0 0 30px rgba(34, 197, 94, 0.2); }
+  50%       { box-shadow: 0 0 25px rgba(34, 197, 94, 0.8), 0 0 50px rgba(34, 197, 94, 0.5); }
 }
 
+.btn-cta-pulse { animation: pulseGlow 2s infinite ease-in-out; }
+
+/* ----------------------------------------------------------
+   Logo Raposa com Glow Dourado
+   ---------------------------------------------------------- */
 @keyframes goldGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.5));
-  }
-  50% {
-    filter: drop-shadow(0 0 18px rgba(245, 158, 11, 0.9));
-  }
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.5)); }
+  50%       { filter: drop-shadow(0 0 18px rgba(245, 158, 11, 0.9)); }
 }
 
-@keyframes floatAnimation {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-6px);
-  }
-}
+.logo-gold-glow { animation: goldGlow 3s infinite ease-in-out; }
 
-.btn-cta-pulse {
-  animation: pulseGlow 2s infinite ease-in-out;
-}
-
-.logo-gold-glow {
-  animation: goldGlow 3s infinite ease-in-out;
-}
-
-.float-badge {
-  animation: floatAnimation 3s infinite ease-in-out;
-}
-
-/* Swiper Linear Continuous Autoplay (Sem Pausas / Sem Saltos) */
-.brandLogosSwiper .swiper-wrapper {
-  transition-timing-function: linear !important;
-}
-
-/* Custom Scrollbar for Carousel */
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-/* Glassmorphism Cards */
+/* ----------------------------------------------------------
+   Glassmorphism Cards
+   ---------------------------------------------------------- */
 .glass-card {
   background: rgba(20, 20, 28, 0.85);
   backdrop-filter: blur(12px);
@@ -68,7 +39,81 @@
   border: 1px solid rgba(245, 158, 11, 0.3);
 }
 
-/* Aspect ratio 9:16 for vertical video */
-.aspect-vertical {
-  aspect-ratio: 9 / 16;
+/* ----------------------------------------------------------
+   Vídeo Vertical 9:16
+   ---------------------------------------------------------- */
+.aspect-vertical { aspect-ratio: 9 / 16; }
+
+
+/* ==========================================================
+   MARQUEE INFINITO DE LOGOS - CSS PURO (SEM JAVASCRIPT)
+   Técnica usada por: Vercel, Stripe, Linear, Tailwind UI
+   - Não para ao clicar, ao tocar ou ao passar o mouse
+   - Zero dependência de biblioteca JS
+   - Funciona 100% em dispositivos móveis e desktop
+   ========================================================== */
+
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Container que esconde overflow e define a faixa */
+.logos-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  /* Gradiente nas bordas para efeito de fade out */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+}
+
+/* Linha de logos: contém DOIS grupos idênticos lado a lado para loop perfeito */
+.logos-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide 22s linear infinite;
+  /* Sem pausa em hover/touch, sem interaction, sem JS necessário */
+  will-change: transform;
+}
+
+/* Cada grupo individual de logos */
+.logos-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-right: 40px;
+  flex-shrink: 0;
+}
+
+/* Cada item de logo */
+.logos-marquee-item img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);  /* força branco para logos com fundo transparente */
+  opacity: 0.85;
+  transition: opacity 0.2s, filter 0.2s;
+  pointer-events: none; /* impede qualquer interação */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Logo do Mercado Livre: cor original (não inverter) */
+.logos-marquee-item.original img {
+  filter: none;
+  opacity: 0.95;
 }
