@@ -27,6 +27,26 @@
   }
 }
 
+/* Continuous smooth marquee for marketplace logos */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 18s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 .btn-cta-pulse {
   animation: pulseGlow 2s infinite ease-in-out;
 }
@@ -50,7 +70,7 @@
 
 /* Glassmorphism Cards */
 .glass-card {
-  background: rgba(22, 22, 30, 0.75);
+  background: rgba(20, 20, 28, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.08);

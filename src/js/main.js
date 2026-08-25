@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 2. SOCIAL PROOF FLOATING TOAST NOTIFICATIONS
+  // 2. SOCIAL PROOF FLOATING TOAST (TOP CENTER)
   // ==========================================
   const toastEl = document.getElementById('social-proof-toast');
   const toastName = document.getElementById('toast-name');
@@ -42,25 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
       if (toastAction) toastAction.textContent = item.action;
       if (toastTime) toastTime.textContent = item.time;
 
-      // Slide in
-      toastEl.classList.remove('translate-y-20', 'opacity-0');
+      // Slide down from top center
+      toastEl.classList.remove('-translate-y-24', 'opacity-0');
       toastEl.classList.add('translate-y-0', 'opacity-100');
 
-      // Hide after 4.5 seconds
+      // Hide after 4 seconds
       setTimeout(() => {
         toastEl.classList.remove('translate-y-0', 'opacity-100');
-        toastEl.classList.add('translate-y-20', 'opacity-0');
-      }, 4500);
+        toastEl.classList.add('-translate-y-24', 'opacity-0');
+      }, 4000);
 
       toastIndex = (toastIndex + 1) % config.notifications.length;
     }
 
-    // Initial show after 3 seconds
+    // Initial show after 2.5 seconds
     setTimeout(() => {
       showNextToast();
-      // Loop every 9 seconds
-      setInterval(showNextToast, 9000);
-    }, 3000);
+      // Loop every 8 seconds
+      setInterval(showNextToast, 8000);
+    }, 2500);
   }
 
   // ==========================================
@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
     videoOverlay.addEventListener('click', () => {
       videoOverlay.classList.add('hidden');
       if (videoIframe) {
-        // If iframe has src parameter or HTML5 video, trigger autoplay
         const currentSrc = videoIframe.getAttribute('src');
         if (currentSrc && !currentSrc.includes('autoplay=1')) {
           const separator = currentSrc.includes('?') ? '&' : '?';

@@ -67,3 +67,4 @@ window.trackTelegramClick = function (location = 'hero') {
     window.open(targetUrl, '_blank', 'noopener,noreferrer');
   }, 150);
 };
+

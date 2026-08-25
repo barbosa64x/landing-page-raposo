@@ -6,7 +6,7 @@
 
 window.RAPOSO_CONFIG = {
   // 1. LINK DO SEU CANAL / GRUPO DO TELEGRAM
-  telegramUrl: "https://t.me/seu_canal_raposo_promocoes", // Substitua pelo seu link do Telegram
+  telegramUrl: "https://t.me/raposodaspromo", // Substitua pelo seu link do Telegram
 
   // 2. ID DO SEU PIXEL DO FACEBOOK (META)
   facebookPixelId: "123456789012345", // Substitua pelo seu ID de Pixel (ex: 9876543210)
@@ -33,3 +33,4 @@ window.RAPOSO_CONFIG = {
     { name: "Patrícia F.", city: "Fortaleza - CE", action: "economizou R$ 89 na Amazon", time: "Há 5 minutos" }
   ]
 };
+

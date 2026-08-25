@@ -98,13 +98,20 @@
       <span>Canal Oficial Raposo Promoções</span>
     </div>
 
-    <!-- Headline AIDA de Alto Impacto -->
+    <!-- Headline AIDA de Alto Impacto com SVG Underline Curvo e Limpo -->
     <h1 class="font-display text-2xl sm:text-3xl md:text-4xl font-extrabold leading-tight tracking-tight text-white mb-3">
-      Economize até <span class="bg-gradient-to-r from-amber-400 to-yellow-300 bg-clip-text text-transparent underline decoration-amber-500/50 decoration-wavy">80% em Compras</span> no Mercado Livre, Shopee e Amazon!
+      Economize até 
+      <span class="relative inline-block whitespace-nowrap">
+        <span class="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-400 bg-clip-text text-transparent">80% em Compras</span>
+        <svg class="absolute -bottom-2.5 left-0 w-full h-3.5 text-amber-400 drop-shadow-[0_2px_6px_rgba(245,158,11,0.5)]" viewBox="0 0 250 14" fill="none" preserveAspectRatio="none">
+          <path d="M4 9.5C65 2.5 185 2.5 246 9.5" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      no Mercado Livre, Shopee e Amazon!
     </h1>
 
     <!-- Sub-headline focada nas dores e orçamento familiar -->
-    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+    <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 mt-4">
       O <strong>Raposo</strong> garimpa diariamente os melhores cupons secretos, erros de preço e promoções imperdíveis. Receba tudo <strong>100% de graça no seu Telegram</strong> antes que os estoques acabem!
     </p>
 
@@ -149,33 +156,149 @@
   </section>
 
   <!-- ==========================================
-       SEÇÃO: LOGOS DOS MARKETPLACES
+       SEÇÃO: CARROSSEL CONTÍNUO DE LOGOS DAS PLATAFORMAS (MARQUEE)
        ========================================== -->
-  <section class="py-6 bg-brand-card/60 border-y border-brand-cardBorder">
-    <div class="max-w-xl mx-auto px-4 text-center">
-      <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">
-        PROMOÇÕES VERIFICADAS E OFICIAIS DAS MAIORES LOJAS
+  <section class="py-6 bg-brand-card/70 border-y border-brand-cardBorder overflow-hidden relative">
+    <div class="max-w-xl mx-auto px-4 text-center mb-4">
+      <p class="text-[11px] font-bold uppercase tracking-wider text-slate-400 flex items-center justify-center gap-1.5">
+        <i data-lucide="badge-check" class="w-4 h-4 text-amber-400"></i>
+        <span>PROMOÇÕES E CUPONS OFICIAIS DAS MAIORES LOJAS</span>
       </p>
-      
-      <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-8 opacity-85">
-        <div class="flex items-center gap-1.5 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
-          <span class="text-yellow-400 font-extrabold text-sm">Mercado Livre</span>
+    </div>
+
+    <!-- Gradientes de Esmaecimento nas Bordas -->
+    <div class="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-brand-dark to-transparent z-10"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-brand-dark to-transparent z-10"></div>
+    
+    <!-- Marquee Container com Logos em SVG de Alta Resolução -->
+    <div class="flex overflow-hidden">
+      <div class="animate-marquee flex items-center gap-4 pr-4">
+        
+        <!-- Mercado Livre -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-yellow-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#FFE600"/>
+            <path d="M6 13C6 13 8 9 12 11C16 13 18 9 18 9" stroke="#2D3277" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <span class="text-yellow-400 font-extrabold text-xs sm:text-sm tracking-wide">Mercado Livre</span>
         </div>
-        <div class="flex items-center gap-1.5 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
-          <span class="text-orange-500 font-extrabold text-sm">Shopee</span>
+
+        <!-- Shopee -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-orange-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#EE4D2D"/>
+            <path d="M8 8V6.5C8 4.5 9.5 3 12 3C14.5 3 16 4.5 16 6.5V8M6 8H18L17 20H7L6 8Z" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.5 12C10.5 12 11 11 12.5 11.5C14 12 13 14 11 14.5C9 15 10 17 12 17C13.5 17 14 16 14 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="text-orange-400 font-extrabold text-xs sm:text-sm tracking-wide">Shopee</span>
         </div>
-        <div class="flex items-center gap-1.5 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
-          <span class="text-cyan-400 font-extrabold text-sm">Amazon</span>
+
+        <!-- Amazon -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-cyan-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#131921"/>
+            <path d="M6 14.5C9.5 17 14.5 17 18 14" stroke="#FF9900" stroke-width="2" stroke-linecap="round"/>
+            <path d="M16 13.5L18.5 14L17.5 16.5" stroke="#FF9900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-cyan-400 font-extrabold text-xs sm:text-sm tracking-wide">Amazon</span>
         </div>
-        <div class="flex items-center gap-1.5 bg-slate-900/80 px-3 py-1.5 rounded-lg border border-slate-800">
-          <span class="text-blue-500 font-extrabold text-sm">Magalu</span>
+
+        <!-- Magalu -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-blue-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#0086FF"/>
+            <path d="M7 16V8L12 13L17 8V16" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-blue-400 font-extrabold text-xs sm:text-sm tracking-wide">Magalu</span>
         </div>
+
+        <!-- AliExpress -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-red-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#FF4747"/>
+            <path d="M7 17L12 7L17 17M9 13H15" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-red-400 font-extrabold text-xs sm:text-sm tracking-wide">AliExpress</span>
+        </div>
+
+        <!-- Shein -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-slate-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#222222"/>
+            <circle cx="12" cy="12" r="6" stroke="#FFFFFF" stroke-width="1.8"/>
+            <path d="M12 9V15M9 12H15" stroke="#F59E0B" stroke-width="1.8"/>
+          </svg>
+          <span class="text-slate-200 font-extrabold text-xs sm:text-sm tracking-wide">Shein</span>
+        </div>
+
+      </div>
+
+      <!-- DUPLICAÇÃO PARA EFEITO DE LOOP INFINITO CONTÍNUO (MARQUEE) -->
+      <div class="animate-marquee flex items-center gap-4 pr-4" aria-hidden="true">
+        
+        <!-- Mercado Livre -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-yellow-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#FFE600"/>
+            <path d="M6 13C6 13 8 9 12 11C16 13 18 9 18 9" stroke="#2D3277" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <span class="text-yellow-400 font-extrabold text-xs sm:text-sm tracking-wide">Mercado Livre</span>
+        </div>
+
+        <!-- Shopee -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-orange-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#EE4D2D"/>
+            <path d="M8 8V6.5C8 4.5 9.5 3 12 3C14.5 3 16 4.5 16 6.5V8M6 8H18L17 20H7L6 8Z" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10.5 12C10.5 12 11 11 12.5 11.5C14 12 13 14 11 14.5C9 15 10 17 12 17C13.5 17 14 16 14 16" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="text-orange-400 font-extrabold text-xs sm:text-sm tracking-wide">Shopee</span>
+        </div>
+
+        <!-- Amazon -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-cyan-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#131921"/>
+            <path d="M6 14.5C9.5 17 14.5 17 18 14" stroke="#FF9900" stroke-width="2" stroke-linecap="round"/>
+            <path d="M16 13.5L18.5 14L17.5 16.5" stroke="#FF9900" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-cyan-400 font-extrabold text-xs sm:text-sm tracking-wide">Amazon</span>
+        </div>
+
+        <!-- Magalu -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-blue-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#0086FF"/>
+            <path d="M7 16V8L12 13L17 8V16" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-blue-400 font-extrabold text-xs sm:text-sm tracking-wide">Magalu</span>
+        </div>
+
+        <!-- AliExpress -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-red-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#FF4747"/>
+            <path d="M7 17L12 7L17 17M9 13H15" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="text-red-400 font-extrabold text-xs sm:text-sm tracking-wide">AliExpress</span>
+        </div>
+
+        <!-- Shein -->
+        <div class="flex items-center gap-2.5 bg-slate-900/90 hover:bg-slate-800/90 px-4 py-2 rounded-xl border border-slate-500/30 transition-all shadow-md">
+          <svg class="w-6 h-6 flex-shrink-0" viewBox="0 0 24 24" fill="none">
+            <rect width="24" height="24" rx="12" fill="#222222"/>
+            <circle cx="12" cy="12" r="6" stroke="#FFFFFF" stroke-width="1.8"/>
+            <path d="M12 9V15M9 12H15" stroke="#F59E0B" stroke-width="1.8"/>
+          </svg>
+          <span class="text-slate-200 font-extrabold text-xs sm:text-sm tracking-wide">Shein</span>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- ==========================================
-       SEÇÃO: SOBRE (COMO O RAPOSO AJUDA VOCÊ)
+       SEÇÃO: SOBRE (COMO O RAPOSO AJUDA VOCÊ) - ÍCONES 100% ALINHADOS NA VERTICAL
        ========================================== -->
   <section class="py-10 px-4 max-w-xl mx-auto">
     <div class="text-center mb-8">
@@ -188,12 +311,12 @@
     </div>
 
     <div class="grid gap-4">
-      <!-- Feature Card 1 -->
-      <div class="glass-card p-4 rounded-xl flex items-start gap-4 border border-brand-cardBorder">
-        <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0">
-          <i data-lucide="search" class="w-5 h-5"></i>
+      <!-- Feature Card 1 (Ícone 100% Alinhado na Vertical) -->
+      <div class="glass-card p-4 rounded-xl flex items-center gap-4 border border-brand-cardBorder hover:border-amber-500/40 transition-colors">
+        <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center flex-shrink-0 shadow-inner">
+          <i data-lucide="search" class="w-6 h-6"></i>
         </div>
-        <div>
+        <div class="flex-1">
           <h3 class="font-bold text-white text-base">Garimpo Automático 24 Horas</h3>
           <p class="text-xs text-slate-300 mt-1 leading-relaxed">
             Nosso robô inteligente analisa milhares de produtos por segundo para encontrar preços que caíram pela metade ou bug de sistemas.
@@ -201,12 +324,12 @@
         </div>
       </div>
 
-      <!-- Feature Card 2 -->
-      <div class="glass-card p-4 rounded-xl flex items-start gap-4 border border-brand-cardBorder">
-        <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
-          <i data-lucide="tag" class="w-5 h-5"></i>
+      <!-- Feature Card 2 (Ícone 100% Alinhado na Vertical) -->
+      <div class="glass-card p-4 rounded-xl flex items-center gap-4 border border-brand-cardBorder hover:border-emerald-500/40 transition-colors">
+        <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0 shadow-inner">
+          <i data-lucide="tag" class="w-6 h-6"></i>
         </div>
-        <div>
+        <div class="flex-1">
           <h3 class="font-bold text-white text-base">Cupons Exclusivos e Secretos</h3>
           <p class="text-xs text-slate-300 mt-1 leading-relaxed">
             Tenha acesso a códigos promocionais que as lojas não divulgam na página principal. Economia de verdade para seu bolso!
@@ -214,12 +337,12 @@
         </div>
       </div>
 
-      <!-- Feature Card 3 -->
-      <div class="glass-card p-4 rounded-xl flex items-start gap-4 border border-brand-cardBorder">
-        <div class="w-10 h-10 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0">
-          <i data-lucide="bell-ring" class="w-5 h-5"></i>
+      <!-- Feature Card 3 (Ícone 100% Alinhado na Vertical) -->
+      <div class="glass-card p-4 rounded-xl flex items-center gap-4 border border-brand-cardBorder hover:border-blue-500/40 transition-colors">
+        <div class="w-12 h-12 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center flex-shrink-0 shadow-inner">
+          <i data-lucide="bell-ring" class="w-6 h-6"></i>
         </div>
-        <div>
+        <div class="flex-1">
           <h3 class="font-bold text-white text-base">Avisos Rápidos de Estoque</h3>
           <p class="text-xs text-slate-300 mt-1 leading-relaxed">
             Promoção boa acaba em minutos. No Telegram você recebe a notificação na hora exata para conseguir comprar antes que esgoste.
@@ -270,7 +393,7 @@
 
       <button 
         onclick="window.trackTelegramClick('garantia_section')"
-        class="w-full py-3 px-4 bg-amber-500 hover:bg-amber-400 text-black font-extrabold text-sm rounded-xl transition duration-200 flex items-center justify-center gap-2">
+        class="w-full py-3.5 px-4 bg-amber-500 hover:bg-amber-400 text-black font-extrabold text-sm rounded-xl transition duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-amber-500/20">
         <span>QUERO ECONOMIZAR AGORA MESMO</span>
         <i data-lucide="arrow-right" class="w-4 h-4"></i>
       </button>
@@ -501,15 +624,15 @@
   </footer>
 
   <!-- ==========================================
-       FLOATING SOCIAL PROOF TOAST (PROVA SOCIAL)
+       FLOATING SOCIAL PROOF TOAST (CENTRALIZADO NO TOPO)
        ========================================== -->
   <div 
     id="social-proof-toast" 
-    class="fixed bottom-20 left-4 z-40 max-w-[290px] bg-slate-900/95 backdrop-blur-md border border-amber-500/40 p-3 rounded-2xl shadow-2xl transition-all duration-500 transform translate-y-20 opacity-0 flex items-center gap-3">
-    <div class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xs flex items-center justify-center flex-shrink-0 border border-amber-500/40">
+    class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[340px] bg-slate-900/95 backdrop-blur-md border border-amber-500/50 p-3 rounded-2xl shadow-2xl transition-all duration-500 transform -translate-y-24 opacity-0 flex items-center gap-3">
+    <div class="w-9 h-9 rounded-full bg-amber-500/20 text-amber-400 font-bold text-xs flex items-center justify-center flex-shrink-0 border border-amber-500/40 shadow-inner">
       ⚡
     </div>
-    <div class="text-left text-xs leading-tight">
+    <div class="text-left text-xs leading-tight flex-1">
       <p class="font-bold text-white"><span id="toast-name">Maria S.</span> <span class="font-normal text-slate-400 text-[10px]">(<span id="toast-city">São Paulo</span>)</span></p>
       <p class="text-emerald-400 text-[11px] font-medium" id="toast-action">entrou no canal agora</p>
       <span class="text-[9px] text-slate-500" id="toast-time">Há 12 segundos</span>
@@ -538,7 +661,7 @@
     // Lucide icons init
     lucide.createIcons();
 
-    // Swiper Carousel init
+    // Swiper Carousel init para depoimentos
     const swiper = new Swiper('.testimonialsSwiper', {
       slidesPerView: 'auto',
       spaceBetween: 16,

@@ -147,3 +147,4 @@ git push -u origin main
 1. **Notificações Flutuantes (Popups)**: No arquivo `config.js`, adicione nomes de cidades da sua região de anúncios para gerar mais identificação com o público local.
 2. **Urgência e Escassez**: O contador de pessoas online altera os valores de forma natural a cada 4 segundos para criar sensação de movimento constante na página.
 3. **Botão Fixo no Mobile (Sticky CTA)**: O botão surge no rodapé do celular assim que o usuário faz rolagem na página, aumentando a taxa de clique (CTR).
+
