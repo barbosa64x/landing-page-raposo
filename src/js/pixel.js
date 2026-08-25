@@ -1,6 +1,6 @@
 /**
- * Meta (Facebook) Pixel Integration Module
- * Handles PageView tracking and custom Lead / CTA Click event tracking.
+ * Meta (Facebook) Pixel & API de Conversões (CAPI) Integration Module
+ * Suporta rastreamento via Navegador (Pixel JS) e Server-Side (CAPI via Netlify Function).
  */
 
 (function initMetaPixel() {
@@ -29,7 +29,7 @@
     s.parentNode.insertBefore(t, s);
   })(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
 
-  if (pixelId) {
+  if (pixelId && pixelId !== "123456789012345") {
     fbq('init', pixelId);
     fbq('track', 'PageView');
     console.log(`[Meta Pixel] Inicializado com Sucesso (ID: ${pixelId}) - Evento PageView Disparado.`);
@@ -37,8 +37,8 @@
 })();
 
 /**
- * Global Helper to Track Lead / CTA Click
- * @param {string} location - Name of button location (e.g., 'hero', 'sticky_mobile', 'faq_bottom')
+ * Global Helper to Track Lead / CTA Click (Browser + Server-Side CAPI)
+ * @param {string} location - Name of button location (e.g., 'hero', 'sticky_mobile', 'garantia_section')
  */
 window.trackTelegramClick = function (location = 'hero') {
   const config = window.RAPOSO_CONFIG || {};
@@ -46,8 +46,8 @@ window.trackTelegramClick = function (location = 'hero') {
 
   console.log(`[Meta Pixel] CTA Clicado na localização: ${location}`);
 
-  if (window.fbq) {
-    // Track standard Lead event and custom TelegramClick event
+  // 1. Rastreamento via Navegador (Pixel Standard)
+  if (window.fbq && config.facebookPixelId && config.facebookPixelId !== "123456789012345") {
     fbq('track', 'Lead', {
       content_name: 'Telegram Channel Join',
       content_category: 'CTA Click',
@@ -62,9 +62,23 @@ window.trackTelegramClick = function (location = 'hero') {
     });
   }
 
-  // Redirect to Telegram channel after short delay or immediately
+  // 2. Rastreamento via Servidor (API de Conversões CAPI) se disponível
+  if (config.facebookCapiToken) {
+    fetch('/.netlify/functions/pixel', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        eventName: 'Lead',
+        location: location,
+        pixelId: config.facebookPixelId,
+        token: config.facebookCapiToken,
+        sourceUrl: window.location.href
+      })
+    }).catch(err => console.log('[Meta CAPI] Erro ao disparar evento server-side:', err));
+  }
+
+  // Redirect to Telegram channel after short delay
   setTimeout(() => {
     window.open(targetUrl, '_blank', 'noopener,noreferrer');
   }, 150);
 };
-

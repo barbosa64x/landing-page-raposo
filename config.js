@@ -6,23 +6,27 @@
 
 window.RAPOSO_CONFIG = {
   // 1. LINK DO SEU CANAL / GRUPO DO TELEGRAM
-  telegramUrl: "https://t.me/raposodaspromo", // Substitua pelo seu link do Telegram
+  telegramUrl: "https://t.me/seu_canal_raposo_promocoes", // Substitua pelo seu link do Telegram
 
   // 2. ID DO SEU PIXEL DO FACEBOOK (META)
-  facebookPixelId: "2527556281306713", // Substitua pelo seu ID de Pixel (ex: 9876543210)
+  facebookPixelId: "123456789012345", // Substitua pelo seu ID de Pixel (ex: 9876543210)
 
-  // 3. NOME DO CANAL E BRANDING
+  // 3. TOKEN DA API DE CONVERSÕES DO META (OPCIONAL - SERVER SIDE CAPI)
+  // Deixe em branco se for usar apenas o Pixel tradicional do Navegador
+  facebookCapiToken: "", // Cole aqui o Token gerado no Gerenciador de Anúncios (ex: EAAB...)
+
+  // 4. NOME DO CANAL E BRANDING
   channelName: "Raposo Promoções",
   tagline: "Achados Diários com até 80% de Desconto",
 
-  // 4. CONFIGURAÇÃO DO CONTADOR DE PESSOAS ONLINE (MOCKADO)
+  // 5. CONFIGURAÇÃO DO CONTADOR DE PESSOAS ONLINE (MOCKADO)
   onlineCounter: {
     min: 310,
     max: 485,
-    intervalMs: 4000 // Varia o número a cada 4 segundos
+    intervalMs: 4000
   },
 
-  // 5. NOTIFICAÇÕES FLUTUANTES DE PROVA SOCIAL (TOASTS)
+  // 6. NOTIFICAÇÕES FLUTUANTES DE PROVA SOCIAL (TOASTS)
   notifications: [
     { name: "Maria S.", city: "São Paulo - SP", action: "entrou no canal agora", time: "Há 12 segundos" },
     { name: "Carlos M.", city: "Rio de Janeiro - RJ", action: "economizou R$ 145 no Mercado Livre", time: "Há 45 segundos" },
@@ -33,4 +37,3 @@ window.RAPOSO_CONFIG = {
     { name: "Patrícia F.", city: "Fortaleza - CE", action: "economizou R$ 89 na Amazon", time: "Há 5 minutos" }
   ]
 };
-
