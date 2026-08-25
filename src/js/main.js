@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. SOCIAL PROOF FLOATING TOAST (TOP CENTER)
   // ==========================================
   const toastEl = document.getElementById('social-proof-toast');
+  const toastAvatar = document.getElementById('toast-avatar');
   const toastName = document.getElementById('toast-name');
   const toastCity = document.getElementById('toast-city');
   const toastAction = document.getElementById('toast-action');
@@ -37,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showNextToast() {
       const item = config.notifications[toastIndex];
+      if (toastAvatar && item.avatar) toastAvatar.src = item.avatar;
       if (toastName) toastName.textContent = item.name;
       if (toastCity) toastCity.textContent = item.city;
       if (toastAction) toastAction.textContent = item.action;

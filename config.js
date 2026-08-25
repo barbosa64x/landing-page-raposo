@@ -32,12 +32,12 @@ window.RAPOSO_CONFIG = {
 
   // 6. NOTIFICAÇÕES FLUTUANTES DE PROVA SOCIAL (TOASTS)
   notifications: [
-    { name: "Maria S.", city: "São Paulo - SP", action: "entrou no canal agora", time: "Há 12 segundos" },
-    { name: "Carlos M.", city: "Rio de Janeiro - RJ", action: "economizou R$ 145 no Mercado Livre", time: "Há 45 segundos" },
-    { name: "Fernanda R.", city: "Belo Horizonte - MG", action: "pegou cupom de 50% na Shopee", time: "Há 1 minuto" },
-    { name: "João P.", city: "Curitiba - PR", action: "entrou no canal agora", time: "Há 2 minutos" },
-    { name: "Luciana K.", city: "Salvador - BA", action: "garantiu lavadora com R$ 400 de desconto", time: "Há 3 minutos" },
-    { name: "Rodrigo A.", city: "Campinas - SP", action: "entrou no canal agora", time: "Há 4 minutos" },
-    { name: "Patrícia F.", city: "Fortaleza - CE", action: "economizou R$ 89 na Amazon", time: "Há 5 minutos" }
+    { avatar: "https://randomuser.me/api/portraits/women/44.jpg", name: "Maria S.", city: "São Paulo - SP", action: "entrou no canal agora", time: "Há 12 segundos" },
+    { avatar: "https://randomuser.me/api/portraits/men/32.jpg",   name: "Carlos M.", city: "Rio de Janeiro - RJ", action: "economizou R$ 145 no Mercado Livre", time: "Há 45 segundos" },
+    { avatar: "https://randomuser.me/api/portraits/women/68.jpg", name: "Fernanda R.", city: "Belo Horizonte - MG", action: "pegou cupom de 50% na Shopee", time: "Há 1 minuto" },
+    { avatar: "https://randomuser.me/api/portraits/men/75.jpg",   name: "João P.", city: "Curitiba - PR", action: "entrou no canal agora", time: "Há 2 minutos" },
+    { avatar: "https://randomuser.me/api/portraits/women/17.jpg", name: "Luciana K.", city: "Salvador - BA", action: "garantiu lavadora com R$ 400 de desconto", time: "Há 3 minutos" },
+    { avatar: "https://randomuser.me/api/portraits/men/56.jpg",   name: "Rodrigo A.", city: "Campinas - SP", action: "entrou no canal agora", time: "Há 4 minutos" },
+    { avatar: "https://randomuser.me/api/portraits/women/29.jpg", name: "Patrícia F.", city: "Fortaleza - CE", action: "economizou R$ 89 na Amazon", time: "Há 5 minutos" }
   ]
 };
