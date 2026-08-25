@@ -6,10 +6,10 @@
 
 window.RAPOSO_CONFIG = {
   // 1. LINK DO SEU CANAL / GRUPO DO TELEGRAM
-  telegramUrl: "https://t.me/seu_canal_raposo_promocoes", // Substitua pelo seu link do Telegram
+  telegramUrl: "https://t.me/raposodaspromo", // Substitua pelo seu link do Telegram
 
   // 2. ID DO SEU PIXEL DO FACEBOOK (META)
-  facebookPixelId: "123456789012345", // Substitua pelo seu ID de Pixel (ex: 9876543210)
+  facebookPixelId: "2527556281306713", // Substitua pelo seu ID de Pixel (ex: 9876543210)
 
   // 3. TOKEN DA API DE CONVERSÕES DO META (OPCIONAL - SERVER SIDE CAPI)
   // Deixe em branco se for usar apenas o Pixel tradicional do Navegador

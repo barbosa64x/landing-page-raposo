@@ -27,26 +27,6 @@
   }
 }
 
-/* Continuous smooth marquee for marketplace logos */
-@keyframes marqueeScroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  display: flex;
-  width: max-content;
-  animation: marqueeScroll 18s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
 .btn-cta-pulse {
   animation: pulseGlow 2s infinite ease-in-out;
 }
@@ -57,6 +37,11 @@
 
 .float-badge {
   animation: floatAnimation 3s infinite ease-in-out;
+}
+
+/* Swiper Linear Continuous Autoplay (Sem Pausas / Sem Saltos) */
+.brandLogosSwiper .swiper-wrapper {
+  transition-timing-function: linear !important;
 }
 
 /* Custom Scrollbar for Carousel */

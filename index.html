@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Outfit:wght@500;700;800;900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <!-- Swiper.js CSS & JS (para os Carrosséis Mobile) -->
+  <!-- Swiper.js CSS & JS (Biblioteca Pronta para o Carrossel Linear Infinito) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
@@ -128,7 +128,7 @@
         </span>
       </div>
 
-      <!-- Video Element (Suporta Iframe de Vimeo, Panda Video, YouTube Shorts ou MP4 Direto) -->
+      <!-- Video Element -->
       <iframe 
         id="video-iframe"
         class="w-full h-full object-cover"
@@ -156,7 +156,7 @@
   </section>
 
   <!-- ==========================================
-       SEÇÃO: CARROSSEL SWIPER COM LOGOS OFICIAIS DAS MARCAS (SEM BUG OU DUPLICAÇÃO)
+       SEÇÃO: CARROSSEL INFINITO E LINEAR DAS NOSSAS PLATAFORMAS (USANDO SWIPER.JS PRONTO)
        ========================================== -->
   <section class="py-6 bg-brand-card/70 border-y border-brand-cardBorder overflow-hidden relative">
     <div class="max-w-xl mx-auto px-4 text-center mb-4">
@@ -170,38 +170,54 @@
     <div class="pointer-events-none absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-brand-dark to-transparent z-20"></div>
     <div class="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-brand-dark to-transparent z-20"></div>
     
-    <!-- Swiper Carousel com Imagens Oficiais das Marcas -->
-    <div class="swiper brandLogosSwiper px-4">
+    <!-- Swiper Carousel com Imagens da pasta public/ -->
+    <div class="swiper brandLogosSwiper">
       <div class="swiper-wrapper flex items-center">
 
         <!-- Mercado Livre -->
-        <div class="swiper-slide !w-auto">
-          <img src="./public/logos/mercadolivre.svg" alt="Mercado Livre Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+          <img src="./public/logo-mercado-livre.png" alt="Mercado Livre Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
         <!-- Shopee -->
-        <div class="swiper-slide !w-auto">
-          <img src="./public/logos/shopee.svg" alt="Shopee Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+          <img src="./public/logo-shopee.svg" alt="Shopee Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
         <!-- Amazon -->
-        <div class="swiper-slide !w-auto">
-          <img src="./public/logos/amazon.svg" alt="Amazon Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+          <img src="./public/logos/amazon.svg" alt="Amazon Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
         <!-- Magalu -->
-        <div class="swiper-slide !w-auto">
-          <img src="./public/logos/magalu.svg" alt="Magalu Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+          <img src="./public/logos/magalu.svg" alt="Magalu Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
         <!-- AliExpress -->
-        <div class="swiper-slide !w-auto">
-          <img src="./public/logos/aliexpress.svg" alt="AliExpress Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
+        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+          <img src="./public/logo-aliexpress.webp" alt="AliExpress Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
-        <!-- Shein -->
-        <div class="swiper-slide !w-auto">
-          <img src="./public/logos/shein.svg" alt="Shein Logo Oficial" class="h-10 sm:h-12 w-auto rounded-xl shadow-md">
+        <!-- REPETIÇÃO PARA MANTER MOVIMENTO INFINITO E LINEAR 100% FLUIDO -->
+        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+          <img src="./public/logo-mercado-livre.png" alt="Mercado Livre Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
+        </div>
+
+        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+          <img src="./public/logo-shopee.svg" alt="Shopee Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
+        </div>
+
+        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+          <img src="./public/logos/amazon.svg" alt="Amazon Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
+        </div>
+
+        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+          <img src="./public/logos/magalu.svg" alt="Magalu Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
+        </div>
+
+        <div class="swiper-slide !w-auto flex items-center justify-center px-2">
+          <img src="./public/logo-aliexpress.webp" alt="AliExpress Logo" class="h-10 sm:h-12 w-auto object-contain drop-shadow-md">
         </div>
 
       </div>
@@ -209,7 +225,7 @@
   </section>
 
   <!-- ==========================================
-       SEÇÃO: SOBRE (COMO O RAPOSO AJUDA VOCÊ) - ÍCONES 100% ALINHADOS NA VERTICAL
+       SEÇÃO: SOBRE (COMO O RAPOSO AJUDA VOCÊ)
        ========================================== -->
   <section class="py-10 px-4 max-w-xl mx-auto">
     <div class="text-center mb-8">
@@ -535,7 +551,7 @@
   </footer>
 
   <!-- ==========================================
-       FLOATING SOCIAL PROOF TOAST (FLUTUANDO ABAIXO DA BARRA SUPERIOR SEM COBRIR)
+       FLOATING SOCIAL PROOF TOAST (ABAIXO DA BARRA SUPERIOR)
        ========================================== -->
   <div 
     id="social-proof-toast" 
@@ -566,7 +582,7 @@
     </div>
   </div>
 
-  <!-- Inicialização do Swiper & Lucide Icons -->
+  <!-- Inicialização dos Carrosséis Swiper & Lucide Icons -->
   <script src="./src/js/main.js"></script>
   <script>
     // Lucide icons init
@@ -588,17 +604,20 @@
       },
     });
 
-    // Swiper Carousel com Autoplay Contínuo e Suave para Logos das Marcas
+    // Swiper Carousel com Autoplay Contínuo LINEAR e Infinito para as Marcas
     const brandSwiper = new Swiper('.brandLogosSwiper', {
       slidesPerView: 'auto',
-      spaceBetween: 20,
+      spaceBetween: 28,
       loop: true,
+      freeMode: true,
+      freeModeMomentum: false,
+      speed: 5000,
       autoplay: {
-        delay: 2000,
+        delay: 0,
         disableOnInteraction: false,
         pauseOnMouseEnter: false,
       },
-      allowTouchMove: true,
+      allowTouchMove: false,
     });
   </script>
 </body>
