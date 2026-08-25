@@ -62,20 +62,20 @@ window.trackTelegramClick = function (location = 'hero') {
     });
   }
 
-  // 2. Rastreamento via Servidor (API de Conversões CAPI) se disponível
-  if (config.facebookCapiToken) {
-    fetch('/.netlify/functions/pixel', {
+  // 2. Rastreamento via Servidor (API de Conversões CAPI)
+  // A função Netlify usa a variável de ambiente FACEBOOK_CAPI_TOKEN — seguro ✅
+  fetch('/.netlify/functions/pixel', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         eventName: 'Lead',
         location: location,
         pixelId: config.facebookPixelId,
-        token: config.facebookCapiToken,
+        // ⚠️ NÃO enviar o token aqui — a função Netlify lê de process.env.FACEBOOK_CAPI_TOKEN
         sourceUrl: window.location.href
       })
     }).catch(err => console.log('[Meta CAPI] Erro ao disparar evento server-side:', err));
-  }
+
 
   // Redirect to Telegram channel after short delay
   setTimeout(() => {

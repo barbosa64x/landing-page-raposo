@@ -11,9 +11,13 @@ window.RAPOSO_CONFIG = {
   // 2. ID DO SEU PIXEL DO FACEBOOK (META)
   facebookPixelId: "2527556281306713", // Substitua pelo seu ID de Pixel (ex: 9876543210)
 
-  // 3. TOKEN DA API DE CONVERSÕES DO META (OPCIONAL - SERVER SIDE CAPI)
-  // Deixe em branco se for usar apenas o Pixel tradicional do Navegador
-  facebookCapiToken: "", // Cole aqui o Token gerado no Gerenciador de Anúncios (ex: EAAB...)
+  // 3. TOKEN DA API DE CONVERSÕES DO META (CAPI)
+  // ⚠️ SEGURANÇA: Não coloque o token aqui — ele fica exposto publicamente no navegador.
+  // Configure a variável de ambiente FACEBOOK_CAPI_TOKEN diretamente no painel do Netlify:
+  // Netlify → Site → Site Configuration → Environment Variables
+  // Se esta opção estiver vazia (""), o Pixel do navegador continuará funcionando normalmente.
+  facebookCapiToken: "", // Deixe vazio aqui. Use variável de ambiente no Netlify.
+
 
   // 4. NOME DO CANAL E BRANDING
   channelName: "Raposo Promoções",

@@ -46,7 +46,7 @@ exports.handler = async function (event, context) {
 
     const options = {
       hostname: 'graph.facebook.com',
-      path: `/v19.0/${pixelId}/events?access_token=${accessToken}`,
+      path: `/v21.0/${pixelId}/events?access_token=${accessToken}`,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
