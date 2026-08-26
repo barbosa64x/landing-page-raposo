@@ -2,9 +2,26 @@
   "name": "raposo-promocoes-landing-page",
   "version": "1.0.0",
   "description": "Landing Page de Alta Conversão para o canal Raposo Promoções no Telegram",
-  "main": "index.html",
+  "type": "module",
   "scripts": {
-    "start": "npx serve ."
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lucide-react": "^0.435.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "swiper": "^11.1.10"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.5.3",
+    "vite": "^5.4.1"
   },
   "author": "Barbosa64x",
   "license": "MIT"

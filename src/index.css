@@ -1,0 +1,224 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors — Fox Imperial Amber & Gold Theme */
+  --color-midnight-canvas: #05060f;
+  --color-steel-plate: #2f343e;
+  --color-fog-veil: #9da7ba;
+  --color-moon-mist: #c7d3ea;
+  --color-frost-glow: #fef3c7;
+  --color-ice-highlight: #fef08a;
+  --color-pure-white: #ffffff;
+  --color-void-violet: #e0561b; /* Vibrant Fox Royal Amber/Orange */
+  --color-fox-gold: #f59e0b;   /* Imperial Crown Gold */
+  --color-blueprint-blue: #fcd34d; /* Soft Warm Gold Accent */
+  --color-ember-glow: #e46d4c;
+  --color-signal-blue: #d97706;
+  --color-deep-teal: #b45309;
+  --color-gridline-blue: #3f4959;
+  --color-glass-edge: rgba(251, 191, 36, 0.14);
+  --color-luminous-fill: rgba(245, 158, 11, 0.12);
+
+  /* Typography */
+  --font-untitled-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-aeonikpro: 'Space Grotesk', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-dotdigital: 'JetBrains Mono', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Typography — Scale */
+  --text-caption: 12px;
+  --leading-caption: 1.33;
+  --text-body-sm: 14px;
+  --leading-body-sm: 1.43;
+  --text-body: 16px;
+  --leading-body: 1.5;
+  --tracking-body: -0.16px;
+  --text-subheading: 18px;
+  --leading-subheading: 1.33;
+  --text-heading-sm: 24px;
+  --leading-heading-sm: 1.17;
+  --tracking-heading-sm: -0.24px;
+  --text-heading: 28px;
+  --leading-heading: 1.14;
+  --text-heading-lg: 44px;
+  --leading-heading-lg: 1.16;
+  --text-display: 48px;
+  --leading-display: 1.17;
+
+  /* Border Radius */
+  --radius-sm: 2px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-2xl: 16px;
+  --radius-3xl: 24px;
+  --radius-3xl-2: 28px;
+  --radius-3xl-3: 44px;
+  --radius-full: 999px;
+  --radius-full-2: 4999.5px;
+  --radius-full-3: 9999px;
+}
+
+/* ==========================================================
+   CUSTOM STYLES (Fox Imperial Amber Aesthetics)
+   ========================================================== */
+
+/* Blueprint Grid Layer */
+.blueprint-grid {
+  background-size: 80px 80px;
+  background-image: 
+    linear-gradient(to right, rgba(245, 158, 11, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(245, 158, 11, 0.04) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 50% 25%, black 60%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at 50% 25%, black 60%, transparent 100%);
+}
+
+/* Conic spotlight halo */
+.spotlight-halo {
+  background: conic-gradient(from 180deg at 50% 0%, transparent 45%, rgba(245, 158, 11, 0.18) 49%, rgba(224, 86, 27, 0.35) 50%, rgba(245, 158, 11, 0.18) 51%, transparent 55%);
+  filter: blur(60px);
+}
+
+/* Skywash linear text gradient — Imperial Gold & Amber */
+.text-skywash {
+  background: linear-gradient(180deg, #ffffff 0%, #fde047 40%, #f59e0b 80%, #ea580c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Eyebrow divider lines */
+.eyebrow-line {
+  height: 1px;
+  flex-grow: 1;
+  background: linear-gradient(90deg, transparent, rgba(245, 158, 11, 0.25) 50%, transparent);
+}
+
+/* Glass Card - Feature */
+.glass-card-feature {
+  background: rgba(245, 158, 11, 0.03);
+  border-radius: 16px;
+  box-shadow: 
+    inset 0 1px 1px rgba(254, 240, 138, 0.15), 
+    inset 0 24px 48px rgba(224, 86, 27, 0.04), 
+    0 24px 32px rgba(6, 6, 14, 0.7);
+  border: 1px solid rgba(245, 158, 11, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+/* Glass Card - Elevated Modal / Security / Main Video */
+.glass-card-modal {
+  background: rgba(5, 6, 15, 0.97);
+  border-radius: 16px;
+  box-shadow: 
+    inset 0 1px 1px rgba(253, 224, 71, 0.25), 
+    inset 0 24px 48px rgba(224, 86, 27, 0.08), 
+    0 16px 32px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Glow logo effect — Crown Gold & Fox Amber */
+.logo-gold-glow {
+  filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.45)) drop-shadow(0 0 18px rgba(224, 86, 27, 0.3));
+  animation: logoGlow 4s infinite ease-in-out;
+}
+
+@keyframes logoGlow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.35)) drop-shadow(0 0 16px rgba(224, 86, 27, 0.25)); }
+  50%       { filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.7)) drop-shadow(0 0 32px rgba(224, 86, 27, 0.5)); }
+}
+
+/* Amber/Gold CTA Button Pulse */
+.btn-cta-pulse {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 14px rgba(224, 86, 27, 0.4), 0 0 28px rgba(245, 158, 11, 0.2); }
+  50%       { box-shadow: 0 0 24px rgba(224, 86, 27, 0.75), 0 0 48px rgba(245, 158, 11, 0.45); }
+}
+
+/* Aspect ratio vertical */
+.aspect-vertical {
+  aspect-ratio: 9 / 16;
+}
+
+/* ==========================================================
+   MARQUEE INFINITO DE LOGOS - CSS PURO
+   ========================================================== */
+
+@keyframes marquee-slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.logos-marquee-wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 15%,
+    black 85%,
+    transparent 100%
+  );
+}
+
+.logos-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-slide 25s linear infinite;
+  will-change: transform;
+}
+
+.logos-marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding-right: 48px;
+  flex-shrink: 0;
+}
+
+.logos-marquee-item img {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  user-select: none;
+}
+
+.logos-marquee-item.original img {
+  filter: none;
+  opacity: 0.8;
+}
+
+/* Overriding Swiper styles for Fox Gold feel */
+.swiper-pagination {
+  position: relative !important;
+  margin-top: 16px !important;
+  bottom: auto !important;
+}
+
+.swiper-pagination-bullet {
+  background: var(--color-fox-gold) !important;
+  opacity: 0.35 !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-pure-white) !important;
+  opacity: 1 !important;
+}
