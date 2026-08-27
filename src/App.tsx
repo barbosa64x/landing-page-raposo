@@ -1,15 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
-import { 
-  MessageCircle, 
-  Crown, 
-  Search, 
-  Tag, 
-  BellRing, 
-  ShieldCheck, 
-  CheckCircle2, 
-  Smartphone, 
-  Lock, 
-  ChevronDown, 
+import {
+  MessageCircle,
+  Crown,
+  Search,
+  Tag,
+  BellRing,
+  ShieldCheck,
+  CheckCircle2,
+  Smartphone,
+  Lock,
+  ChevronDown,
   ArrowRight,
   TrendingUp
 } from 'lucide-react';
@@ -23,7 +23,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 
 export default function App() {
-  const [onlineCount, setOnlineCount] = useState(RAPOSO_CONFIG.onlineCounter.min);
   const [currentToastIdx, setCurrentToastIdx] = useState(0);
   const [toastVisible, setToastVisible] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -33,34 +32,11 @@ export default function App() {
 
   const toastItem = RAPOSO_CONFIG.notifications[currentToastIdx];
 
-  // 1. Dynamic Online User Counter
-  useEffect(() => {
-    // Initial random value
-    setOnlineCount(
-      Math.floor(
-        Math.random() * (RAPOSO_CONFIG.onlineCounter.max - RAPOSO_CONFIG.onlineCounter.min + 1) + 
-        RAPOSO_CONFIG.onlineCounter.min
-      )
-    );
-
-    const interval = setInterval(() => {
-      setOnlineCount((prev) => {
-        const delta = Math.floor(Math.random() * 9) - 3; // random delta between -3 and +5
-        return Math.max(
-          RAPOSO_CONFIG.onlineCounter.min, 
-          Math.min(RAPOSO_CONFIG.onlineCounter.max, prev + delta)
-        );
-      });
-    }, RAPOSO_CONFIG.onlineCounter.intervalMs);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // 2. Social Proof Floating Toast Loop
+  // Social Proof Floating Toast Loop
   useEffect(() => {
     const showNextToast = () => {
       setToastVisible(true);
-      
+
       // Hide after 4 seconds
       const hideTimeout = setTimeout(() => {
         setToastVisible(false);
@@ -82,10 +58,10 @@ export default function App() {
       return () => clearInterval(interval);
     }, 2500);
 
-    return () => clearTimeout(initialTimeout);
+    return () => clearInterval(initialTimeout);
   }, []);
 
-  // 3. Hero Section Intersection Observer (Hide Popup in Hero)
+  // Hero Section Intersection Observer (Hide Popup in Hero)
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -112,23 +88,23 @@ export default function App() {
       <div className="absolute top-0 left-0 right-0 h-[650px] spotlight-halo pointer-events-none z-0" />
 
       {/* ==========================================
-           TOP NOTICE BAR (Contador de Acessos Online)
+           TOP NOTICE BAR (Membros Ativos)
            ========================================== */}
-      <header className="relative z-40 bg-[#05060f]/60 backdrop-blur-md border-b border-glass-edge py-2.5 px-4 text-center">
-        <div className="max-w-4xl mx-auto flex items-center justify-center gap-2 text-xs md:text-sm font-medium">
+      <header className="relative z-40 bg-[#05060f]/80 backdrop-blur-md border-b border-glass-edge py-2 px-4 text-center">
+        <div className="max-w-4xl mx-auto flex items-center justify-center gap-2 text-xs font-medium">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-void-violet opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-void-violet"></span>
           </span>
-          <span className="text-moon-mist">
-            🔥 <strong className="text-pure-white font-semibold">{onlineCount}</strong> pessoas economizando agora • Cupons 100% Gratuitos
+          <span className="text-moon-mist uppercase">
+            <strong className="text-pure-white font-semibold">+6.144 Membros Ativos</strong> em Nossos Grupos.
           </span>
         </div>
       </header>
 
       {/* CONTENT WRAPPER */}
       <main className="relative z-10 max-w-[480px] mx-auto px-4 pt-8 space-y-16">
-        
+
         {/* ==========================================
              HERO SECTION (AIDA Copy + Mascot)
              ========================================== */}
@@ -137,9 +113,9 @@ export default function App() {
           <div className="flex justify-center">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-void-violet to-fox-gold rounded-full blur-md opacity-50 group-hover:opacity-70 transition duration-1000"></div>
-              <img 
-                src="/logo.png" 
-                alt={RAPOSO_CONFIG.channelName} 
+              <img
+                src="/logo.png"
+                alt={RAPOSO_CONFIG.channelName}
                 className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full border-2 border-glass-edge object-cover shadow-2xl logo-gold-glow"
               />
             </div>
@@ -161,7 +137,7 @@ export default function App() {
             <span className="relative inline-block whitespace-nowrap">
               <span className="text-skywash font-bold">80% em Compras</span>
               <svg className="absolute -bottom-2.5 left-0 w-full h-3 text-fox-gold drop-shadow-[0_2px_6px_rgba(224,86,27,0.4)]" viewBox="0 0 250 14" fill="none" preserveAspectRatio="none">
-                <path d="M4 9.5C65 2.5 185 2.5 246 9.5" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round"/>
+                <path d="M4 9.5C65 2.5 185 2.5 246 9.5" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" />
               </svg>
             </span>{" "}
             no Mercado Livre, Shopee e Amazon!
@@ -173,15 +149,20 @@ export default function App() {
           </p>
 
           {/* CTA Action Stack */}
-          <div className="space-y-3 pt-2">
-            <button 
+          <div className="space-y-2.5 pt-2">
+            {/* Scarcity Banner (Discreet & Compact for Mobile) */}
+            <div className="uppercase bg-amber-500/10 border border-amber-500/20 py-1.5 px-3 rounded-lg text-[11px] text-amber-300 text-center font-medium leading-snug">
+              Os 6 primeiros grupos já lotaram. Garanta sua vaga no <strong>Grupo #07</strong> recém-aberto!
+            </div>
+
+            <button
               onClick={() => trackWhatsAppClick('hero')}
               className="w-full py-5 px-8 rounded-full bg-void-violet text-pure-white font-bold text-base sm:text-lg tracking-wide transition-all btn-cta-pulse active:scale-[0.98] flex items-center justify-center gap-2.5 border-t border-glass-edge shadow-[0_0_24px_rgba(224,86,27,0.4)] hover:brightness-110"
             >
               <MessageCircle className="w-5 h-5 fill-current" />
               <span>ENTRAR NO GRUPO DO WHATSAPP</span>
             </button>
-            
+
             <p className="text-[11px] text-fog-veil flex items-center justify-center gap-1.5">
               <ShieldCheck className="w-4 h-4 text-blueprint-blue" />
               <span>Acesso Instantâneo • Sem Cadastro • 100% Seguro</span>
@@ -293,7 +274,7 @@ export default function App() {
             <div className="w-12 h-12 bg-steel-plate rounded-full flex items-center justify-center mx-auto text-blueprint-blue border border-glass-edge shadow-inner">
               <ShieldCheck className="w-6 h-6" />
             </div>
-            
+
             <div className="space-y-1">
               <h2 className="font-display text-base sm:text-lg font-semibold text-pure-white">
                 Sua Segurança é Prioridade
@@ -329,7 +310,7 @@ export default function App() {
               </div>
             </div>
 
-            <button 
+            <button
               onClick={() => trackWhatsAppClick('garantia_section')}
               className="btn-primary-ghost w-full py-4.5 px-6 font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-glass-edge"
             >
@@ -381,9 +362,9 @@ export default function App() {
               <SwiperSlide className="!w-[260px]">
                 <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
                   <div className="flex items-center gap-3">
-                    <img 
-                      src="https://randomuser.me/api/portraits/women/44.jpg" 
-                      alt="Ana Paula S." 
+                    <img
+                      src="https://randomuser.me/api/portraits/women/44.jpg"
+                      alt="Ana Paula S."
                       className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
                     />
                     <div>
@@ -405,9 +386,9 @@ export default function App() {
               <SwiperSlide className="!w-[260px]">
                 <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
                   <div className="flex items-center gap-3">
-                    <img 
-                      src="https://randomuser.me/api/portraits/men/32.jpg" 
-                      alt="Carlos Lima" 
+                    <img
+                      src="https://randomuser.me/api/portraits/men/32.jpg"
+                      alt="Carlos Lima"
                       className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
                     />
                     <div>
@@ -429,9 +410,9 @@ export default function App() {
               <SwiperSlide className="!w-[260px]">
                 <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
                   <div className="flex items-center gap-3">
-                    <img 
-                      src="https://randomuser.me/api/portraits/women/68.jpg" 
-                      alt="Fernanda Ramos" 
+                    <img
+                      src="https://randomuser.me/api/portraits/women/68.jpg"
+                      alt="Fernanda Ramos"
                       className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
                     />
                     <div>
@@ -453,9 +434,9 @@ export default function App() {
               <SwiperSlide className="!w-[260px]">
                 <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
                   <div className="flex items-center gap-3">
-                    <img 
-                      src="https://randomuser.me/api/portraits/men/75.jpg" 
-                      alt="João Pedro" 
+                    <img
+                      src="https://randomuser.me/api/portraits/men/75.jpg"
+                      alt="João Pedro"
                       className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
                     />
                     <div>
@@ -477,9 +458,9 @@ export default function App() {
               <SwiperSlide className="!w-[260px]">
                 <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
                   <div className="flex items-center gap-3">
-                    <img 
-                      src="https://randomuser.me/api/portraits/women/17.jpg" 
-                      alt="Márcia Santos" 
+                    <img
+                      src="https://randomuser.me/api/portraits/women/17.jpg"
+                      alt="Márcia Santos"
                       className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
                     />
                     <div>
@@ -523,14 +504,14 @@ export default function App() {
           <div className="space-y-3">
             {/* FAQ 1 */}
             <div className="glass-card-feature overflow-hidden">
-              <button 
+              <button
                 onClick={() => handleFAQToggle(1)}
                 className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
               >
                 <span>É realmente 100% gratuito?</span>
                 <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 1 ? 'rotate-180' : ''}`} />
               </button>
-              <div 
+              <div
                 className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 1 ? 'max-h-32 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
               >
                 <p className="text-xs text-moon-mist leading-relaxed">
@@ -541,14 +522,14 @@ export default function App() {
 
             {/* FAQ 2 */}
             <div className="glass-card-feature overflow-hidden">
-              <button 
+              <button
                 onClick={() => handleFAQToggle(2)}
                 className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
               >
                 <span>É seguro clicar nos links das promoções?</span>
                 <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 2 ? 'rotate-180' : ''}`} />
               </button>
-              <div 
+              <div
                 className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 2 ? 'max-h-32 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
               >
                 <p className="text-xs text-moon-mist leading-relaxed">
@@ -559,14 +540,14 @@ export default function App() {
 
             {/* FAQ 3 */}
             <div className="glass-card-feature overflow-hidden">
-              <button 
+              <button
                 onClick={() => handleFAQToggle(3)}
                 className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
               >
                 <span>Como compro com os descontos?</span>
                 <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 3 ? 'rotate-180' : ''}`} />
               </button>
-              <div 
+              <div
                 className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 3 ? 'max-h-40 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
               >
                 <p className="text-xs text-moon-mist leading-relaxed">
@@ -577,14 +558,14 @@ export default function App() {
 
             {/* FAQ 4 */}
             <div className="glass-card-feature overflow-hidden">
-              <button 
+              <button
                 onClick={() => handleFAQToggle(4)}
                 className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
               >
                 <span>Posso silenciar as notificações?</span>
                 <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 4 ? 'rotate-180' : ''}`} />
               </button>
-              <div 
+              <div
                 className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 4 ? 'max-h-32 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
               >
                 <p className="text-xs text-moon-mist leading-relaxed">
@@ -607,7 +588,12 @@ export default function App() {
               Dezenas de bugs de preço e cupons são disparados a cada hora. Entre no grupo vip gratuito e garanta suas ofertas.
             </p>
 
-            <button 
+            {/* Scarcity Banner (Discreet & Compact for Mobile) */}
+            <div className="uppercase bg-amber-500/10 border border-amber-500/20 py-1.5 px-3 rounded-lg text-[11px] text-amber-300 text-center font-medium leading-snug">
+              Os 6 primeiros grupos já lotaram. Garanta sua vaga no <strong>Grupo #07</strong> recém-aberto.
+            </div>
+
+            <button
               onClick={() => trackWhatsAppClick('final_cta')}
               className="w-full py-5 px-8 rounded-full bg-void-violet text-pure-white font-bold text-base tracking-wide transition-all btn-cta-pulse active:scale-[0.98] flex items-center justify-center gap-2.5 shadow-[0_0_24px_rgba(224,86,27,0.4)] border-t border-glass-edge/40 hover:brightness-110"
             >
@@ -631,10 +617,9 @@ export default function App() {
       {/* ==========================================
            FLOATING SOCIAL PROOF TOAST
            ========================================== */}
-      <div 
-        className={`fixed top-14 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[320px] glass-card-modal p-3 flex items-center gap-3 transition-all duration-500 ease-in-out border border-void-violet/30 shadow-[0_0_24px_rgba(224,86,27,0.25)] ${
-          toastVisible && !isHeroVisible ? 'translate-y-0 opacity-100' : '-translate-y-32 opacity-0 pointer-events-none'
-        }`}
+      <div
+        className={`fixed top-14 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[320px] glass-card-modal p-3 flex items-center gap-3 transition-all duration-500 ease-in-out border border-void-violet/30 shadow-[0_0_24px_rgba(224,86,27,0.25)] ${toastVisible && !isHeroVisible ? 'translate-y-0 opacity-100' : '-translate-y-32 opacity-0 pointer-events-none'
+          }`}
       >
         {toastItem && (
           <>
