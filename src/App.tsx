@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
 import {
-  MessageCircle,
   Crown,
   Search,
   Tag,
@@ -13,6 +12,7 @@ import {
   ArrowRight,
   TrendingUp
 } from 'lucide-react';
+import { FaWhatsapp } from 'react-icons/fa6';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { RAPOSO_CONFIG } from './config';
@@ -135,7 +135,7 @@ export default function App() {
           <h1 className="font-display text-3xl sm:text-4xl font-semibold leading-tight tracking-tight text-pure-white">
             Economize até{" "}
             <span className="relative inline-block whitespace-nowrap">
-              <span className="text-skywash font-bold">80% em Compras</span>
+              <span className="text-skywash font-bold">95% em Compras</span>
               <svg className="absolute -bottom-2.5 left-0 w-full h-3 text-fox-gold drop-shadow-[0_2px_6px_rgba(224,86,27,0.4)]" viewBox="0 0 250 14" fill="none" preserveAspectRatio="none">
                 <path d="M4 9.5C65 2.5 185 2.5 246 9.5" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" />
               </svg>
@@ -143,30 +143,32 @@ export default function App() {
             no Mercado Livre, Shopee e Amazon!
           </h1>
 
-          {/* Subheading */}
-          <p className="text-moon-mist text-sm leading-relaxed max-w-sm mx-auto">
-            O Raposo rastreia e envia diariamente cupons secretos, erros de preço e pechinchas exclusivas. Entre <strong>100% grátis no WhatsApp</strong> antes que os estoques se esgotem!
-          </p>
-
-          {/* CTA Action Stack */}
-          <div className="space-y-2.5 pt-2">
-            {/* Scarcity Banner (Discreet & Compact for Mobile) */}
-            <div className="uppercase bg-amber-500/10 border border-amber-500/20 py-1.5 px-3 rounded-lg text-[11px] text-amber-300 text-center font-medium leading-snug">
-              Os 6 primeiros grupos já lotaram. Garanta sua vaga no <strong>Grupo #07</strong> recém-aberto!
-            </div>
-
-            <button
-              onClick={() => trackWhatsAppClick('hero')}
-              className="w-full py-5 px-8 rounded-full bg-void-violet text-pure-white font-bold text-base sm:text-lg tracking-wide transition-all btn-cta-pulse active:scale-[0.98] flex items-center justify-center gap-2.5 border-t border-glass-edge shadow-[0_0_24px_rgba(224,86,27,0.4)] hover:brightness-110"
-            >
-              <MessageCircle className="w-5 h-5 fill-current" />
-              <span>ENTRAR NO GRUPO DO WHATSAPP</span>
-            </button>
-
-            <p className="text-[11px] text-fog-veil flex items-center justify-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-blueprint-blue" />
-              <span>Acesso Instantâneo • Sem Cadastro • 100% Seguro</span>
+          <div className='flex flex-col items-center gap-2 px-2'>
+            {/* Subheading */}
+            <p className="text-moon-mist text-sm leading-relaxed max-w-sm mx-auto text-center">
+              Pague muito menos nas suas compras do dia a dia. Receba alertas diários de cupons validados e ofertas com até <strong>95% OFF no Mercado Livre, Shopee e Amazon</strong>. Garanta sua vaga <strong>100% grátis no WhatsApp</strong>!
             </p>
+
+            {/* CTA Action Stack */}
+            <div className="w-full space-y-2.5 pt-2 flex flex-col items-center">
+              {/* Scarcity Banner (Discreet & Compact for Mobile) */}
+              <div className="w-full mt-2 uppercase bg-amber-500/10 border border-amber-500/20 py-1.5 px-3 rounded-lg text-[11px] text-amber-300 text-center font-medium leading-snug">
+                Os 6 primeiros grupos já lotaram. Garanta sua vaga no <strong>Grupo #07</strong> recém-aberto!
+              </div>
+
+              <button
+                onClick={() => trackWhatsAppClick('hero')}
+                className="mt-7 mb-6 w-full py-5 px-6 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-pure-white font-extrabold text-base sm:text-lg tracking-wide transition-all btn-whatsapp-pulse active:scale-[0.98] flex items-center justify-center gap-2.5 border-t border-white/30 shadow-[0_0_24px_rgba(37,211,102,0.4)] mx-auto"
+              >
+                <FaWhatsapp className="w-6 h-6 shrink-0" />
+                <span>ENTRAR NO GRUPO DO WHATSAPP</span>
+              </button>
+
+              <p className="text-[11px] text-fog-veil flex items-center justify-center gap-1.5 text-center">
+                <ShieldCheck className="w-4 h-4 text-blueprint-blue" />
+                <span>Acesso Instantâneo • Sem Cadastro • 100% Seguro</span>
+              </p>
+            </div>
           </div>
         </section>
 
@@ -205,413 +207,419 @@ export default function App() {
         </section>
 
         {/* ==========================================
-             ABOUT & FEATURES SECTION (Por que o Raposo)
+             SEÇÕES OCULTAS ABAIXO DO CARROSSEL
+             (Código preservado, apenas oculto visualmente)
              ========================================== */}
-        <section className="space-y-6">
-          <div className="text-center space-y-2">
-            <div className="flex items-center gap-3 justify-center">
-              <div className="eyebrow-line" />
-              <span className="font-dotdigital text-xs uppercase tracking-[0.15em] text-moon-mist">
-                Como Ajudamos
-              </span>
-              <div className="eyebrow-line" />
-            </div>
-            <h2 className="font-display text-xl sm:text-2xl font-semibold text-pure-white">
-              Por que o grupo é único?
-            </h2>
-            <p className="text-fog-veil text-xs max-w-xs mx-auto">
-              Fazemos o garimpo duro para você comprar mais barato todos os dias.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            {/* Feature 1 */}
-            <div className="glass-card-feature p-5 flex items-center gap-5">
-              <div className="w-12 h-12 rounded-full bg-steel-plate flex items-center justify-center flex-shrink-0 text-blueprint-blue border border-glass-edge shadow-inner">
-                <Search className="w-6 h-6" />
+        <div style={{ display: 'none' }}>
+          {/* ==========================================
+               ABOUT & FEATURES SECTION (Por que o Raposo)
+               ========================================== */}
+          <section className="space-y-6">
+            <div className="text-center space-y-2">
+              <div className="flex items-center gap-3 justify-center">
+                <div className="eyebrow-line" />
+                <span className="font-dotdigital text-xs uppercase tracking-[0.15em] text-moon-mist">
+                  Como Ajudamos
+                </span>
+                <div className="eyebrow-line" />
               </div>
-              <div className="space-y-1">
-                <h3 className="font-semibold text-pure-white text-sm">Garimpo Inteligente 24h</h3>
-                <p className="text-xs text-moon-mist leading-relaxed">
-                  Vasculhamos milhares de páginas por segundo buscando cupons escondidos e erros sistêmicos de preço.
-                </p>
-              </div>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="glass-card-feature p-5 flex items-center gap-5">
-              <div className="w-12 h-12 rounded-full bg-steel-plate flex items-center justify-center flex-shrink-0 text-blueprint-blue border border-glass-edge shadow-inner">
-                <Tag className="w-6 h-6" />
-              </div>
-              <div className="space-y-1">
-                <h3 className="font-semibold text-pure-white text-sm">Cupons que Funcionam</h3>
-                <p className="text-xs text-moon-mist leading-relaxed">
-                  Chega de testar cupons expirados. No grupo, os cupons são validados em tempo real antes de serem compartilhados.
-                </p>
-              </div>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="glass-card-feature p-5 flex items-center gap-5">
-              <div className="w-12 h-12 rounded-full bg-steel-plate flex items-center justify-center flex-shrink-0 text-blueprint-blue border border-glass-edge shadow-inner">
-                <BellRing className="w-6 h-6" />
-              </div>
-              <div className="space-y-1">
-                <h3 className="font-semibold text-pure-white text-sm">Alertas Instantâneos</h3>
-                <p className="text-xs text-moon-mist leading-relaxed">
-                  Bugs de preços acabam rápido. Notificamos você no WhatsApp instantaneamente para garantir sua compra antes do estoque acabar.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ==========================================
-             SECURITY & GUARANTEES SECTION
-             ========================================== */}
-        <section className="space-y-6">
-          <div className="glass-card-modal p-6 text-center space-y-4">
-            <div className="w-12 h-12 bg-steel-plate rounded-full flex items-center justify-center mx-auto text-blueprint-blue border border-glass-edge shadow-inner">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-
-            <div className="space-y-1">
-              <h2 className="font-display text-base sm:text-lg font-semibold text-pure-white">
-                Sua Segurança é Prioridade
+              <h2 className="font-display text-xl sm:text-2xl font-semibold text-pure-white">
+                Por que o grupo é único?
               </h2>
-              <p className="text-xs text-fog-veil leading-relaxed">
-                Links seguros, auditados e livres de spam ou vírus.
+              <p className="text-fog-veil text-xs max-w-xs mx-auto">
+                Fazemos o garimpo duro para você comprar mais barato todos os dias.
               </p>
             </div>
 
-            <div className="grid grid-cols-3 gap-2.5 my-4">
-              <div className="bg-midnight-canvas/40 p-2.5 rounded-lg border border-glass-edge text-center space-y-1">
-                <div className="text-[10px] text-blueprint-blue font-bold tracking-wider flex items-center justify-center gap-1">
-                  <CheckCircle2 className="w-3 h-3" />
-                  <span>GRÁTIS</span>
+            <div className="space-y-3">
+              {/* Feature 1 */}
+              <div className="glass-card-feature p-5 flex items-center gap-5">
+                <div className="w-12 h-12 rounded-full bg-steel-plate flex items-center justify-center flex-shrink-0 text-blueprint-blue border border-glass-edge shadow-inner">
+                  <Search className="w-6 h-6" />
                 </div>
-                <p className="text-[9px] text-moon-mist leading-tight">Sem cobrança ou taxas ocultas.</p>
+                <div className="space-y-1">
+                  <h3 className="font-semibold text-pure-white text-sm">Garimpo Inteligente 24h</h3>
+                  <p className="text-xs text-moon-mist leading-relaxed">
+                    Vasculhamos milhares de páginas por segundo buscando cupons escondidos e erros sistêmicos de preço.
+                  </p>
+                </div>
               </div>
 
-              <div className="bg-midnight-canvas/40 p-2.5 rounded-lg border border-glass-edge text-center space-y-1">
-                <div className="text-[10px] text-blueprint-blue font-bold tracking-wider flex items-center justify-center gap-1">
-                  <Smartphone className="w-3 h-3" />
-                  <span>APLICATIVO</span>
+              {/* Feature 2 */}
+              <div className="glass-card-feature p-5 flex items-center gap-5">
+                <div className="w-12 h-12 rounded-full bg-steel-plate flex items-center justify-center flex-shrink-0 text-blueprint-blue border border-glass-edge shadow-inner">
+                  <Tag className="w-6 h-6" />
                 </div>
-                <p className="text-[9px] text-moon-mist leading-tight">A compra finaliza direto no app oficial.</p>
+                <div className="space-y-1">
+                  <h3 className="font-semibold text-pure-white text-sm">Cupons que Funcionam</h3>
+                  <p className="text-xs text-moon-mist leading-relaxed">
+                    Chega de testar cupons expirados. No grupo, os cupons são validados em tempo real antes de serem compartilhados.
+                  </p>
+                </div>
               </div>
 
-              <div className="bg-midnight-canvas/40 p-2.5 rounded-lg border border-glass-edge text-center space-y-1">
-                <div className="text-[10px] text-blueprint-blue font-bold tracking-wider flex items-center justify-center gap-1">
-                  <Lock className="w-3 h-3" />
-                  <span>SEGURO</span>
+              {/* Feature 3 */}
+              <div className="glass-card-feature p-5 flex items-center gap-5">
+                <div className="w-12 h-12 rounded-full bg-steel-plate flex items-center justify-center flex-shrink-0 text-blueprint-blue border border-glass-edge shadow-inner">
+                  <BellRing className="w-6 h-6" />
                 </div>
-                <p className="text-[9px] text-moon-mist leading-tight">Links verificados e encurtados limpos.</p>
+                <div className="space-y-1">
+                  <h3 className="font-semibold text-pure-white text-sm">Alertas Instantâneos</h3>
+                  <p className="text-xs text-moon-mist leading-relaxed">
+                    Bugs de preços acabam rápido. Notificamos você no WhatsApp instantaneamente para garantir sua compra antes do estoque acabar.
+                  </p>
+                </div>
               </div>
             </div>
+          </section>
 
-            <button
-              onClick={() => trackWhatsAppClick('garantia_section')}
-              className="btn-primary-ghost w-full py-4.5 px-6 font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-glass-edge"
-            >
-              <span>Quero Economizar com Segurança</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-        </section>
+          {/* ==========================================
+               SECURITY & GUARANTEES SECTION
+               ========================================== */}
+          <section className="space-y-6">
+            <div className="glass-card-modal p-6 text-center space-y-4">
+              <div className="w-12 h-12 bg-steel-plate rounded-full flex items-center justify-center mx-auto text-blueprint-blue border border-glass-edge shadow-inner">
+                <ShieldCheck className="w-6 h-6" />
+              </div>
 
-        {/* ==========================================
-             TESTIMONIALS SECTION (UGC / Swiper Slider)
-             ========================================== */}
-        <section className="space-y-6">
-          <div className="text-center space-y-2">
-            <div className="flex items-center gap-3 justify-center">
-              <div className="eyebrow-line" />
-              <span className="font-dotdigital text-xs uppercase tracking-[0.15em] text-moon-mist">
-                Prova Social
-              </span>
-              <div className="eyebrow-line" />
+              <div className="space-y-1">
+                <h2 className="font-display text-base sm:text-lg font-semibold text-pure-white">
+                  Sua Segurança é Prioridade
+                </h2>
+                <p className="text-xs text-fog-veil leading-relaxed">
+                  Links seguros, auditados e livres de spam ou vírus.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-3 gap-2.5 my-4">
+                <div className="bg-midnight-canvas/40 p-2.5 rounded-lg border border-glass-edge text-center space-y-1">
+                  <div className="text-[10px] text-blueprint-blue font-bold tracking-wider flex items-center justify-center gap-1">
+                    <CheckCircle2 className="w-3 h-3" />
+                    <span>GRÁTIS</span>
+                  </div>
+                  <p className="text-[9px] text-moon-mist leading-tight">Sem cobrança ou taxas ocultas.</p>
+                </div>
+
+                <div className="bg-midnight-canvas/40 p-2.5 rounded-lg border border-glass-edge text-center space-y-1">
+                  <div className="text-[10px] text-blueprint-blue font-bold tracking-wider flex items-center justify-center gap-1">
+                    <Smartphone className="w-3 h-3" />
+                    <span>APLICATIVO</span>
+                  </div>
+                  <p className="text-[9px] text-moon-mist leading-tight">A compra finaliza direto no app oficial.</p>
+                </div>
+
+                <div className="bg-midnight-canvas/40 p-2.5 rounded-lg border border-glass-edge text-center space-y-1">
+                  <div className="text-[10px] text-blueprint-blue font-bold tracking-wider flex items-center justify-center gap-1">
+                    <Lock className="w-3 h-3" />
+                    <span>SEGURO</span>
+                  </div>
+                  <p className="text-[9px] text-moon-mist leading-tight">Links verificados e encurtados limpos.</p>
+                </div>
+              </div>
+
+              <button
+                onClick={() => trackWhatsAppClick('garantia_section')}
+                className="btn-primary-ghost w-full py-4.5 px-6 font-semibold text-xs tracking-wider uppercase flex items-center justify-center gap-2 hover:bg-glass-edge"
+              >
+                <span>Quero Economizar com Segurança</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
             </div>
-            <h2 className="font-display text-xl sm:text-2xl font-semibold text-pure-white">
-              Quem já entrou economizou
-            </h2>
-            <p className="text-fog-veil text-xs max-w-xs mx-auto">
-              Veja prints e depoimentos enviados por inscritos reais!
+          </section>
+
+          {/* ==========================================
+               TESTIMONIALS SECTION (UGC / Swiper Slider)
+               ========================================== */}
+          <section className="space-y-6">
+            <div className="text-center space-y-2">
+              <div className="flex items-center gap-3 justify-center">
+                <div className="eyebrow-line" />
+                <span className="font-dotdigital text-xs uppercase tracking-[0.15em] text-moon-mist">
+                  Prova Social
+                </span>
+                <div className="eyebrow-line" />
+              </div>
+              <h2 className="font-display text-xl sm:text-2xl font-semibold text-pure-white">
+                Quem já entrou economizou
+              </h2>
+              <p className="text-fog-veil text-xs max-w-xs mx-auto">
+                Veja prints e depoimentos enviados por inscritos reais!
+              </p>
+            </div>
+
+            {/* Swiper React */}
+            <div className="pb-8 select-none">
+              <Swiper
+                modules={[Autoplay, Pagination]}
+                slidesPerView={'auto'}
+                spaceBetween={14}
+                centeredSlides={false}
+                loop={true}
+                autoplay={{
+                  delay: 4000,
+                  disableOnInteraction: false,
+                }}
+                pagination={{
+                  clickable: true,
+                  dynamicBullets: true,
+                }}
+                className="w-full"
+              >
+                {/* Testimonial 1 */}
+                <SwiperSlide className="!w-[260px]">
+                  <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src="https://randomuser.me/api/portraits/women/44.jpg"
+                        alt="Ana Paula S."
+                        className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
+                      />
+                      <div>
+                        <h4 className="font-semibold text-xs text-pure-white">Ana Paula S.</h4>
+                        <p className="text-[9px] text-fog-veil">Mãe de 2 filhos • São Paulo/SP</p>
+                      </div>
+                    </div>
+                    <p className="text-xs text-moon-mist leading-relaxed italic mt-2 flex-grow">
+                      "Consegui comprar o fraldão da Shopee por R$ 39 com o cupom que o Raposo mandou de manhã! Economizei muito!"
+                    </p>
+                    <div className="text-[10px] text-blueprint-blue font-semibold font-mono flex items-center gap-1 border-t border-glass-edge/40 pt-2 mt-2">
+                      <TrendingUp className="w-3 h-3" />
+                      <span>✓ Economizou R$ 85,00</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+
+                {/* Testimonial 2 */}
+                <SwiperSlide className="!w-[260px]">
+                  <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src="https://randomuser.me/api/portraits/men/32.jpg"
+                        alt="Carlos Lima"
+                        className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
+                      />
+                      <div>
+                        <h4 className="font-semibold text-xs text-pure-white">Carlos Lima</h4>
+                        <p className="text-[9px] text-fog-veil">Rio de Janeiro/RJ</p>
+                      </div>
+                    </div>
+                    <p className="text-xs text-moon-mist leading-relaxed italic mt-2 flex-grow">
+                      "Peguei uma Smart TV de 50 polegadas por R$ 1.200 no Mercado Livre por causa da falha de preço avisada no grupo!"
+                    </p>
+                    <div className="text-[10px] text-blueprint-blue font-semibold font-mono flex items-center gap-1 border-t border-glass-edge/40 pt-2 mt-2">
+                      <TrendingUp className="w-3 h-3" />
+                      <span>✓ Economizou R$ 650,00</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+
+                {/* Testimonial 3 */}
+                <SwiperSlide className="!w-[260px]">
+                  <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src="https://randomuser.me/api/portraits/women/68.jpg"
+                        alt="Fernanda Ramos"
+                        className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
+                      />
+                      <div>
+                        <h4 className="font-semibold text-xs text-pure-white">Fernanda Ramos</h4>
+                        <p className="text-[9px] text-fog-veil">Belo Horizonte/MG</p>
+                      </div>
+                    </div>
+                    <p className="text-xs text-moon-mist leading-relaxed italic mt-2 flex-grow">
+                      "Eu tinha medo de entrar nesses grupos, mas é super seguro. Você clica e compra dentro do próprio aplicativo oficial."
+                    </p>
+                    <div className="text-[10px] text-blueprint-blue font-semibold font-mono flex items-center gap-1 border-t border-glass-edge/40 pt-2 mt-2">
+                      <TrendingUp className="w-3 h-3" />
+                      <span>✓ Economizou R$ 140,00</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+
+                {/* Testimonial 4 */}
+                <SwiperSlide className="!w-[260px]">
+                  <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src="https://randomuser.me/api/portraits/men/75.jpg"
+                        alt="João Pedro"
+                        className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
+                      />
+                      <div>
+                        <h4 className="font-semibold text-xs text-pure-white">João Pedro</h4>
+                        <p className="text-[9px] text-fog-veil">Curitiba/PR</p>
+                      </div>
+                    </div>
+                    <p className="text-xs text-moon-mist leading-relaxed italic mt-2 flex-grow">
+                      "Melhor grupo do WhatsApp! Todo dia tem frete grátis e cupons de 20 reais sem valor mínimo. Vale muito a pena!"
+                    </p>
+                    <div className="text-[10px] text-blueprint-blue font-semibold font-mono flex items-center gap-1 border-t border-glass-edge/40 pt-2 mt-2">
+                      <TrendingUp className="w-3 h-3" />
+                      <span>✓ Economizou R$ 210,00</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+
+                {/* Testimonial 5 */}
+                <SwiperSlide className="!w-[260px]">
+                  <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
+                    <div className="flex items-center gap-3">
+                      <img
+                        src="https://randomuser.me/api/portraits/women/17.jpg"
+                        alt="Márcia Santos"
+                        className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
+                      />
+                      <div>
+                        <h4 className="font-semibold text-xs text-pure-white">Márcia Santos</h4>
+                        <p className="text-[9px] text-fog-veil">Salvador/BA</p>
+                      </div>
+                    </div>
+                    <p className="text-xs text-moon-mist leading-relaxed italic mt-2 flex-grow">
+                      "Comprei um jogo de panela com 70% de desconto por conta de um bug alertado. Chegou tudo certinho no app oficial."
+                    </p>
+                    <div className="text-[10px] text-blueprint-blue font-semibold font-mono flex items-center gap-1 border-t border-glass-edge/40 pt-2 mt-2">
+                      <TrendingUp className="w-3 h-3" />
+                      <span>✓ Economizou R$ 190,00</span>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+          </section>
+
+          {/* ==========================================
+               FAQ SECTION (Accordion)
+               ========================================== */}
+          <section className="space-y-6">
+            <div className="text-center space-y-2">
+              <div className="flex items-center gap-3 justify-center">
+                <div className="eyebrow-line" />
+                <span className="font-dotdigital text-xs uppercase tracking-[0.15em] text-moon-mist">
+                  Dúvidas Comuns
+                </span>
+                <div className="eyebrow-line" />
+              </div>
+              <h2 className="font-display text-xl sm:text-2xl font-semibold text-pure-white">
+                Perguntas Frequentes
+              </h2>
+              <p className="text-fog-veil text-xs max-w-xs mx-auto">
+                Esclareça suas principais dúvidas antes de entrar no grupo vip.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {/* FAQ 1 */}
+              <div className="glass-card-feature overflow-hidden">
+                <button
+                  onClick={() => handleFAQToggle(1)}
+                  className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
+                >
+                  <span>É realmente 100% gratuito?</span>
+                  <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 1 ? 'rotate-180' : ''}`} />
+                </button>
+                <div
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 1 ? 'max-h-32 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
+                >
+                  <p className="text-xs text-moon-mist leading-relaxed">
+                    Sim! Você não paga absolutamente nada para entrar ou permanecer no grupo. Nosso serviço é totalmente gratuito para os membros.
+                  </p>
+                </div>
+              </div>
+
+              {/* FAQ 2 */}
+              <div className="glass-card-feature overflow-hidden">
+                <button
+                  onClick={() => handleFAQToggle(2)}
+                  className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
+                >
+                  <span>É seguro clicar nos links das promoções?</span>
+                  <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 2 ? 'rotate-180' : ''}`} />
+                </button>
+                <div
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 2 ? 'max-h-32 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
+                >
+                  <p className="text-xs text-moon-mist leading-relaxed">
+                    Totalmente seguro. Todos os links direcionam diretamente para os aplicativos oficiais ou sites verificados do Mercado Livre, Shopee, Amazon e Magalu.
+                  </p>
+                </div>
+              </div>
+
+              {/* FAQ 3 */}
+              <div className="glass-card-feature overflow-hidden">
+                <button
+                  onClick={() => handleFAQToggle(3)}
+                  className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
+                >
+                  <span>Como compro com os descontos?</span>
+                  <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 3 ? 'rotate-180' : ''}`} />
+                </button>
+                <div
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 3 ? 'max-h-40 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
+                >
+                  <p className="text-xs text-moon-mist leading-relaxed">
+                    Basta clicar no link publicado no grupo do WhatsApp. O aplicativo correspondente (Shopee, Amazon, etc.) abrirá automaticamente no seu celular com o desconto ou cupom aplicado no carrinho.
+                  </p>
+                </div>
+              </div>
+
+              {/* FAQ 4 */}
+              <div className="glass-card-feature overflow-hidden">
+                <button
+                  onClick={() => handleFAQToggle(4)}
+                  className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
+                >
+                  <span>Posso silenciar as notificações?</span>
+                  <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 4 ? 'rotate-180' : ''}`} />
+                </button>
+                <div
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 4 ? 'max-h-32 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
+                >
+                  <p className="text-xs text-moon-mist leading-relaxed">
+                    Sim. Você pode silenciar o grupo no WhatsApp a qualquer momento e verificar os achados somente quando quiser fazer compras no dia.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* ==========================================
+               FINAL CTA SECTION
+               ========================================== */}
+          <section className="py-4">
+            <div className="glass-card-modal p-6 text-center space-y-4 border border-void-violet/40 shadow-[0_0_32px_rgba(224,86,27,0.2)]">
+              <h3 className="font-display text-lg font-semibold text-pure-white">
+                Pare de perder dinheiro à toa!
+              </h3>
+              <p className="text-xs text-moon-mist leading-relaxed">
+                Dezenas de bugs de preço e cupons são disparados a cada hora. Entre no grupo vip gratuito e garanta suas ofertas.
+              </p>
+
+              {/* Scarcity Banner (Discreet & Compact for Mobile) */}
+              <div className="uppercase bg-amber-500/10 border border-amber-500/20 py-1.5 px-3 rounded-lg text-[11px] text-amber-300 text-center font-medium leading-snug">
+                Os 6 primeiros grupos já lotaram. Garanta sua vaga no <strong>Grupo #07</strong> recém-aberto.
+              </div>
+
+              <button
+                onClick={() => trackWhatsAppClick('final_cta')}
+                className="w-full py-5 px-8 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-pure-white font-extrabold text-base tracking-wide transition-all btn-whatsapp-pulse active:scale-[0.98] flex items-center justify-center gap-2.5 shadow-[0_0_24px_rgba(37,211,102,0.4)] border-t border-white/30"
+              >
+                <FaWhatsapp className="w-6 h-6 shrink-0" />
+                <span>ENTRAR NO WHATSAPP AGORA</span>
+              </button>
+            </div>
+          </section>
+
+          {/* ==========================================
+               FOOTER
+               ========================================== */}
+          <footer className="text-center py-6 text-[10px] text-fog-veil border-t border-glass-edge/30 space-y-1">
+            <p>© 2026 {RAPOSO_CONFIG.channelName}. Todos os direitos reservados.</p>
+            <p className="max-w-xs mx-auto leading-relaxed">
+              Este site não possui vínculo direto com o WhatsApp, Facebook Meta, Mercado Livre, Shopee ou Amazon.
             </p>
-          </div>
-
-          {/* Swiper React */}
-          <div className="pb-8 select-none">
-            <Swiper
-              modules={[Autoplay, Pagination]}
-              slidesPerView={'auto'}
-              spaceBetween={14}
-              centeredSlides={false}
-              loop={true}
-              autoplay={{
-                delay: 4000,
-                disableOnInteraction: false,
-              }}
-              pagination={{
-                clickable: true,
-                dynamicBullets: true,
-              }}
-              className="w-full"
-            >
-              {/* Testimonial 1 */}
-              <SwiperSlide className="!w-[260px]">
-                <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/44.jpg"
-                      alt="Ana Paula S."
-                      className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-xs text-pure-white">Ana Paula S.</h4>
-                      <p className="text-[9px] text-fog-veil">Mãe de 2 filhos • São Paulo/SP</p>
-                    </div>
-                  </div>
-                  <p className="text-xs text-moon-mist leading-relaxed italic mt-2 flex-grow">
-                    "Consegui comprar o fraldão da Shopee por R$ 39 com o cupom que o Raposo mandou de manhã! Economizei muito!"
-                  </p>
-                  <div className="text-[10px] text-blueprint-blue font-semibold font-mono flex items-center gap-1 border-t border-glass-edge/40 pt-2 mt-2">
-                    <TrendingUp className="w-3 h-3" />
-                    <span>✓ Economizou R$ 85,00</span>
-                  </div>
-                </div>
-              </SwiperSlide>
-
-              {/* Testimonial 2 */}
-              <SwiperSlide className="!w-[260px]">
-                <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src="https://randomuser.me/api/portraits/men/32.jpg"
-                      alt="Carlos Lima"
-                      className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-xs text-pure-white">Carlos Lima</h4>
-                      <p className="text-[9px] text-fog-veil">Rio de Janeiro/RJ</p>
-                    </div>
-                  </div>
-                  <p className="text-xs text-moon-mist leading-relaxed italic mt-2 flex-grow">
-                    "Peguei uma Smart TV de 50 polegadas por R$ 1.200 no Mercado Livre por causa da falha de preço avisada no grupo!"
-                  </p>
-                  <div className="text-[10px] text-blueprint-blue font-semibold font-mono flex items-center gap-1 border-t border-glass-edge/40 pt-2 mt-2">
-                    <TrendingUp className="w-3 h-3" />
-                    <span>✓ Economizou R$ 650,00</span>
-                  </div>
-                </div>
-              </SwiperSlide>
-
-              {/* Testimonial 3 */}
-              <SwiperSlide className="!w-[260px]">
-                <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/68.jpg"
-                      alt="Fernanda Ramos"
-                      className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-xs text-pure-white">Fernanda Ramos</h4>
-                      <p className="text-[9px] text-fog-veil">Belo Horizonte/MG</p>
-                    </div>
-                  </div>
-                  <p className="text-xs text-moon-mist leading-relaxed italic mt-2 flex-grow">
-                    "Eu tinha medo de entrar nesses grupos, mas é super seguro. Você clica e compra dentro do próprio aplicativo oficial."
-                  </p>
-                  <div className="text-[10px] text-blueprint-blue font-semibold font-mono flex items-center gap-1 border-t border-glass-edge/40 pt-2 mt-2">
-                    <TrendingUp className="w-3 h-3" />
-                    <span>✓ Economizou R$ 140,00</span>
-                  </div>
-                </div>
-              </SwiperSlide>
-
-              {/* Testimonial 4 */}
-              <SwiperSlide className="!w-[260px]">
-                <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src="https://randomuser.me/api/portraits/men/75.jpg"
-                      alt="João Pedro"
-                      className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-xs text-pure-white">João Pedro</h4>
-                      <p className="text-[9px] text-fog-veil">Curitiba/PR</p>
-                    </div>
-                  </div>
-                  <p className="text-xs text-moon-mist leading-relaxed italic mt-2 flex-grow">
-                    "Melhor grupo do WhatsApp! Todo dia tem frete grátis e cupons de 20 reais sem valor mínimo. Vale muito a pena!"
-                  </p>
-                  <div className="text-[10px] text-blueprint-blue font-semibold font-mono flex items-center gap-1 border-t border-glass-edge/40 pt-2 mt-2">
-                    <TrendingUp className="w-3 h-3" />
-                    <span>✓ Economizou R$ 210,00</span>
-                  </div>
-                </div>
-              </SwiperSlide>
-
-              {/* Testimonial 5 */}
-              <SwiperSlide className="!w-[260px]">
-                <div className="glass-card-feature p-6 flex flex-col justify-between min-h-[190px] text-left">
-                  <div className="flex items-center gap-3">
-                    <img
-                      src="https://randomuser.me/api/portraits/women/17.jpg"
-                      alt="Márcia Santos"
-                      className="w-8.5 h-8.5 rounded-full object-cover border border-glass-edge flex-shrink-0"
-                    />
-                    <div>
-                      <h4 className="font-semibold text-xs text-pure-white">Márcia Santos</h4>
-                      <p className="text-[9px] text-fog-veil">Salvador/BA</p>
-                    </div>
-                  </div>
-                  <p className="text-xs text-moon-mist leading-relaxed italic mt-2 flex-grow">
-                    "Comprei um jogo de panela com 70% de desconto por conta de um bug alertado. Chegou tudo certinho no app oficial."
-                  </p>
-                  <div className="text-[10px] text-blueprint-blue font-semibold font-mono flex items-center gap-1 border-t border-glass-edge/40 pt-2 mt-2">
-                    <TrendingUp className="w-3 h-3" />
-                    <span>✓ Economizou R$ 190,00</span>
-                  </div>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </div>
-        </section>
-
-        {/* ==========================================
-             FAQ SECTION (Accordion)
-             ========================================== */}
-        <section className="space-y-6">
-          <div className="text-center space-y-2">
-            <div className="flex items-center gap-3 justify-center">
-              <div className="eyebrow-line" />
-              <span className="font-dotdigital text-xs uppercase tracking-[0.15em] text-moon-mist">
-                Dúvidas Comuns
-              </span>
-              <div className="eyebrow-line" />
-            </div>
-            <h2 className="font-display text-xl sm:text-2xl font-semibold text-pure-white">
-              Perguntas Frequentes
-            </h2>
-            <p className="text-fog-veil text-xs max-w-xs mx-auto">
-              Esclareça suas principais dúvidas antes de entrar no grupo vip.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            {/* FAQ 1 */}
-            <div className="glass-card-feature overflow-hidden">
-              <button
-                onClick={() => handleFAQToggle(1)}
-                className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
-              >
-                <span>É realmente 100% gratuito?</span>
-                <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 1 ? 'rotate-180' : ''}`} />
-              </button>
-              <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 1 ? 'max-h-32 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
-              >
-                <p className="text-xs text-moon-mist leading-relaxed">
-                  Sim! Você não paga absolutamente nada para entrar ou permanecer no grupo. Nosso serviço é totalmente gratuito para os membros.
-                </p>
-              </div>
-            </div>
-
-            {/* FAQ 2 */}
-            <div className="glass-card-feature overflow-hidden">
-              <button
-                onClick={() => handleFAQToggle(2)}
-                className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
-              >
-                <span>É seguro clicar nos links das promoções?</span>
-                <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 2 ? 'rotate-180' : ''}`} />
-              </button>
-              <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 2 ? 'max-h-32 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
-              >
-                <p className="text-xs text-moon-mist leading-relaxed">
-                  Totalmente seguro. Todos os links direcionam diretamente para os aplicativos oficiais ou sites verificados do Mercado Livre, Shopee, Amazon e Magalu.
-                </p>
-              </div>
-            </div>
-
-            {/* FAQ 3 */}
-            <div className="glass-card-feature overflow-hidden">
-              <button
-                onClick={() => handleFAQToggle(3)}
-                className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
-              >
-                <span>Como compro com os descontos?</span>
-                <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 3 ? 'rotate-180' : ''}`} />
-              </button>
-              <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 3 ? 'max-h-40 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
-              >
-                <p className="text-xs text-moon-mist leading-relaxed">
-                  Basta clicar no link publicado no grupo do WhatsApp. O aplicativo correspondente (Shopee, Amazon, etc.) abrirá automaticamente no seu celular com o desconto ou cupom aplicado no carrinho.
-                </p>
-              </div>
-            </div>
-
-            {/* FAQ 4 */}
-            <div className="glass-card-feature overflow-hidden">
-              <button
-                onClick={() => handleFAQToggle(4)}
-                className="w-full py-5 px-6 text-left font-semibold text-sm text-pure-white flex justify-between items-center gap-2 hover:bg-glass-edge/10 transition-colors"
-              >
-                <span>Posso silenciar as notificações?</span>
-                <ChevronDown className={`w-5 h-5 text-blueprint-blue transition-transform duration-300 ${openFaq === 4 ? 'rotate-180' : ''}`} />
-              </button>
-              <div
-                className={`transition-all duration-300 ease-in-out overflow-hidden ${openFaq === 4 ? 'max-h-32 opacity-100 border-t border-glass-edge/30 px-6 pb-5 pt-3' : 'max-h-0 opacity-0'}`}
-              >
-                <p className="text-xs text-moon-mist leading-relaxed">
-                  Sim. Você pode silenciar o grupo no WhatsApp a qualquer momento e verificar os achados somente quando quiser fazer compras no dia.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ==========================================
-             FINAL CTA SECTION
-             ========================================== */}
-        <section className="py-4">
-          <div className="glass-card-modal p-6 text-center space-y-4 border border-void-violet/40 shadow-[0_0_32px_rgba(224,86,27,0.2)]">
-            <h3 className="font-display text-lg font-semibold text-pure-white">
-              Pare de perder dinheiro à toa!
-            </h3>
-            <p className="text-xs text-moon-mist leading-relaxed">
-              Dezenas de bugs de preço e cupons são disparados a cada hora. Entre no grupo vip gratuito e garanta suas ofertas.
-            </p>
-
-            {/* Scarcity Banner (Discreet & Compact for Mobile) */}
-            <div className="uppercase bg-amber-500/10 border border-amber-500/20 py-1.5 px-3 rounded-lg text-[11px] text-amber-300 text-center font-medium leading-snug">
-              Os 6 primeiros grupos já lotaram. Garanta sua vaga no <strong>Grupo #07</strong> recém-aberto.
-            </div>
-
-            <button
-              onClick={() => trackWhatsAppClick('final_cta')}
-              className="w-full py-5 px-8 rounded-full bg-void-violet text-pure-white font-bold text-base tracking-wide transition-all btn-cta-pulse active:scale-[0.98] flex items-center justify-center gap-2.5 shadow-[0_0_24px_rgba(224,86,27,0.4)] border-t border-glass-edge/40 hover:brightness-110"
-            >
-              <MessageCircle className="w-5 h-5 fill-current" />
-              <span>ENTRAR NO WHATSAPP AGORA</span>
-            </button>
-          </div>
-        </section>
-
-        {/* ==========================================
-             FOOTER
-             ========================================== */}
-        <footer className="text-center py-6 text-[10px] text-fog-veil border-t border-glass-edge/30 space-y-1">
-          <p>© 2026 {RAPOSO_CONFIG.channelName}. Todos os direitos reservados.</p>
-          <p className="max-w-xs mx-auto leading-relaxed">
-            Este site não possui vínculo direto com o WhatsApp, Facebook Meta, Mercado Livre, Shopee ou Amazon.
-          </p>
-        </footer>
+          </footer>
+        </div>
       </main>
 
       {/* ==========================================
